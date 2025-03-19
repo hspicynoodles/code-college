@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>code.college</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="content">
+        <!-- Navigation Bar-->
+        <div class="nav-bar">
+            <ul class="menu">
+                <li><a href="#home" id="home-button" onclick="homeButtonClick()">Home</a></li>
+                <li><a href="#forts">Forts</a></li>
+                <li><a href="#chat" id="chat-button" onclick="chatButtonClick()">Chat</a></li>
+                <li><a href="#help">Help</a></li>
+                <li><a href="#login">Login</a></li>
+            </ul>
+        </div>
+
+        <!--Logo-->
+        <div>
+            <img src="logo.png" alt="code.college logo">
+        </div>
+
+
+        <h1>Getting Started!</h1>
+        <p>This Fort is your gateway to mastering coding challenges and achieving victory! It's designed to equip you
+            with the skills and knowledge to unlock your full potential and prepare you for future coding conquests. At
+            the
+            heart of your journey lies the Crown—a prestigious token earned through overcoming challenges. How do you
+            earn this crown? By completing challenges, of course!</p>
+
+        <p>Each fort is broken down into multiple modules, and each module contains a series of coding challenges. As
+            you tackle each challenge, you'll earn a Crown for your effort.</p>
+
+        <p>Good luck on your coding journey!</p>
+
+
+        <!-- Resources -->
+
+        <h2>Resources</h2>
+        <!-- Add FreeCodeCamp,Geeks for Geeks and W3schools pictures -->
+        <!-- Challenges -->
+        <h2>Challenges</h2>
+
+        <div class="level-bar-container">
+
+            <button type="button" class="collapsible" id="collapsible">Challenge 1</button>
+            <!-- Challenge 1-->
+            <div class="bar-content">
+                <p class="challenge-text">Welcome to HTML/CSS here we will be going through the basics with HTML & CSS
+                    and with
+                    this knowledge you will be able to complete the challenges and earn your crown. Good luck!
+                </p>
+
+                <p class="challenge-text">
+                    Okay so first thing is first. What is HTML & CSS?HTML stands for Hyper Text Markup Language. It is
+                    used to create and structure the content on webpages. Think of this as the structure of a house. It
+                    gives the house its shape and tells you where the rooms/windows/doors go. CSS stands for Cascading
+                    Style
+                    Sheets. It is used to style the content on webpages. Think of this as the paint and decorations of a
+                    house.
+                    It givesthe house its color and style.
+
+                </p>
+
+                <p class="challenge-text">
+                    We are going to show you some boilerpoint code to get you started. This is the basic structure of an
+                    HTML.
+
+                </p>
+                <div class="coding-example">
+                    <p class="code-text">
+                        boilerplate test text
+
+                        <!--  This is the boilerplate code that we will be expaning 
+                        <!DOCTYPE html>
+                        <html lang="en">
+
+                        <head>
+                            <meta charset="UTF-8">
+                            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                            <meta http-equiv="X-UA-Compatible" content="ie=edge">
+                            <title>code.college</title>
+                            <link rel="stylesheet" href="styles.css">
+                        </head>
+
+                        <body>
+
+                            <script src="script.js"></script>
+                        </body>
+
+                        </html>
+                    -->
+                    </p>
+                    <p class="comment-text">
+                        this is a comment
+                    </p>
+
+                </div>
+                <p>
+                    Now you try and make some boilerplate code to get the crown!
+                </p>
+
+                <!-- when the start button is clicked the crown and submit placeholders should show otherwise they are hidden-->
+                <button type="button" class="start-button" onclick="startFunction()">Start</button>
+                <input type="text" class="crown-input" placeholder="Crown"></input>
+                <button type="button" class="submit-button" onclick="submitFunction()">Submit</button>
+            </div>
+
+            <!-- Challenge 2-->
+            <button type="button" class="collapsible" id="collapsible">Challenge 2</button>
+            <div class="bar-content">
+                <p class="challenge-text">Now that we have our boiler plate started we can get into some important html
+                    concepts that you will use on your journey. <!-- Talk about headers paragraphs-->
+                </p>
+                <button type="button" class="start-button" onclick="startFunction()">Start</button>
+                <input type="text" placeholder="Crown"></input>
+                <button type="button" class="submit-button" onclick="submitFunction()">Submit</button>
+            </div>
+
+            <!-- Challenge 3-->
+            <!-- Talk about div and spans and flex containers-->
+            <button type="button" class="collapsible" id="collapsible">Challenge 3</button>
+            <div class="bar-content">
+                <p class="challenge-text">To claim the crown, you must first gather your courage and assemble your
+                    allies. The path to the throne is fraught with challenges, but with determination, victory is within
+                    your grasp.
+                </p>
+                <button type="button" class="start-button" onclick="startFunction()">Start</button>
+                <input type="text" placeholder="Crown"></input>
+                <button type="button" class="submit-crown" onclick="submitFunction()">Submit</button>
+            </div>
+            <!-- Challenge 4-->
+            <!-- Talk about the basics of styling-->
+            <button type="button" class="collapsible" id="collapsible">Challenge 4</button>
+            <div class="bar-content">
+                <p class="challenge-text">To claim the crown, you must first gather your courage and assemble your
+                    allies. The path to the throne is fraught with challenges, but with determination, victory is within
+                    your grasp.
+                </p>
+                <button type="button" class="start-button" onclick="startFunction()">Start</button>
+                <input type="text" placeholder="Crown"></input>
+                <button type="button" class="submit-crown" onclick="submitFunction()">Submit</button>
+            </div>
+        </div>
+    </div>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

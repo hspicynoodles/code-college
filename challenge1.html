@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>code.college</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="content">
+        <!-- Navigation Bar-->
+        <div class="nav-bar">
+            <ul class="menu">
+                <li><a href="#home" id="home-button" onclick="homeButtonClick()">Home</a></li>
+                <li><a href="#forts">Forts</a></li>
+                <li><a href="#chat" id="chat-button" onclick="chatButtonClick()">Chat</a></li>
+                <li><a href="#help">Help</a></li>
+                <li><a href="#login">Login</a></li>
+            </ul>
+        </div>
+
+        <!--Logo-->
+        <div>
+            <img src="logo.png" alt="code.college logo">
+        </div>
+
+
+        <h1>Getting Started!</h1>
+        <p>This Fort is your gateway to mastering coding challenges and achieving victory! It's designed to equip you
+            with the skills and knowledge to unlock your full potential and prepare you for future coding conquests. At
+            the
+            heart of your journey lies the Crown—a prestigious token earned through overcoming challenges. How do you
+            earn this crown? By completing challenges, of course!</p>
+
+        <p>Each fort is broken down into multiple modules, and each module contains a series of coding challenges. As
+            you tackle each challenge, you'll earn a Crown for your effort.</p>
+
+        <p>Good luck on your coding journey!</p>
+
+
+        <!-- Resources -->
+
+        <h2>Resources</h2>
+        <!-- Add FreeCodeCamp,Geeks for Geeks and W3schools pictures -->
+        <button type="button" class="collapsible" id="collapsible">Placeholder</button>
+        <div class="bar-content">
+            <p class="challenge-text">
+            </p>
+            <button type="button" class="start-button" onclick="startFunction()">Start</button>
+            <input type="text" placeholder="Crown"></input>
+            <button type="button" class="submit-crown" onclick="submitFunction()">Submit</button>
+        </div>
+
+        <div class="level-bar-container">
+
+        </div>
+        <!-- Challenges -->
+        <h2>Challenges</h2>
+
+        <div class="level-bar-container">
+
+            <button type="button" class="collapsible" id="collapsible">Welcome to HTML</button>
+            <!-- Challenge 1-->
+            <div class="bar-content">
+                <p class="challenge-text">Welcome to HTML/CSS here we will be going through the basics with HTML & CSS
+                    and with
+                    this knowledge you will be able to complete the challenges and earn your crown. Good luck!
+                </p>
+
+                <p class="challenge-text">
+                    Okay so first thing is first. What is HTML & CSS?HTML stands for Hyper Text Markup Language. It is
+                    used to create and structure the content on webpages. Think of this as the structure of a house. It
+                    gives the house its shape and tells you where the rooms/windows/doors go. CSS stands for Cascading
+                    Style
+                    Sheets. It is used to style the content on webpages. Think of this as the paint and decorations of a
+                    house.
+                    It givesthe house its color and style.
+
+                </p>
+
+                <p class="challenge-text">
+                    We are going to show you some boilerplate code to get you started. This is the basic structure of an
+                    HTML.
+
+                </p>
+                <div class="coding-example">
+                    <p class="code-text">
+                        boilerplate test text
+                        <!-- figure out how to put the boilerplate code -->
+
+                        <!--  This is the boilerplate code that we will be expaning 
+                        <!DOCTYPE html>
+                        <html lang="en">
+
+                        <head>
+                            <meta charset="UTF-8">
+                            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                            <meta http-equiv="X-UA-Compatible" content="ie=edge">
+                            <title>code.college</title>
+                            <link rel="stylesheet" href="styles.css">
+                        </head>
+
+                        <body>
+
+                            <script src="script.js"></script>
+                        </body>
+
+                        </html>
+                    -->
+                    </p>
+                    <p class="comment-text">
+                        this is a comment
+                    </p>
+
+                </div>
+                <p>
+                    Now you try and make some boilerplate code to get the crown!
+                </p>
+
+                <!-- when the start button is clicked the crown and submit placeholders should show otherwise they are hidden-->
+                <button type="button" class="start-button" onclick="startFunction()">Start</button>
+                <input type="text" class="crown-input" placeholder="Crown"></input>
+                <button type="button" class="submit-button" onclick="submitFunction()">Submit</button>
+            </div>
+
+            <!-- Challenge 2-->
+            <button type="button" class="collapsible" id="collapsible">Headers & Paragraphs</button>
+            <div class="bar-content">
+                <p class="challenge-text"> Okay! Yay you were able to make a boiler plate for html!
+                    <img src="sarcastic.gif" alt="sarcastic gif" style="width:48px;height:48px;">
+                    Now what? The hell am I supposed to do with this? Well, dont panic just yet! Now we are going to go
+                    into the basics of HTML.
+                    <!-- Talk about headers paragraphs-->
+                </p>
+                <p class="challenge-text">
+                    lets talk about the structure of code.college. Everything here on the website is inside of our HTML
+                    boilerplate. The first thing you see is the header. The header is where you put the title of your
+                    webpage. The title is what shows up on the tab of your browser. The next thing
+                    you see is the body. The body is where you put all the content of your webpage. This is where you
+                    put all the text, images, and videos that you want to show up on your webpage. The body is like the
+                    main part of your webpage. It is where all the action happens.
+
+                </p>
+                <p>
+                    Headers are represented by the &lt;h1&gt; to &lt;h6&gt; tags. The
+                    &lt;h1&gt; tag is the largest header and the&lt;/h6&gt; tag
+                    is the smallest header. Paragraphs are represented by the &lt;p&gt; tag and is used to create a
+                    new paragraph. You may also notice that there are opening and closing tags. The opening tag just
+                    shows where to start and end an element. The closing tag is the same as the opening tag but with a /
+                    before the element name.
+                </p>
+
+                <p>
+                    Now that you know a little bit about headers and paragraphs lets try to make some headers and
+                    paragraphs to get the crown!
+                </p>
+                <button type="button" class="start-button" onclick="startFunction()">Start</button>
+                <input type="text" placeholder="Crown"></input>
+                <button type="button" class="submit-button" onclick="submitFunction()">Submit</button>
+            </div>
+
+            <!-- Challenge 3-->
+            <!-- Talk about div and spans and flex containers-->
+            <button type="button" class="collapsible" id="collapsible">Div & Span Elements</button>
+            <div class="bar-content">
+                <p class="challenge-text"> Okay yay! We see what headers are now and we can go ahead and learn about my
+                    next favorite HTML concepts. Divs and Spans!
+                    <img src="keepGoing.jpg" alt="keep going meme" style="width:48px;height:48px;">
+                    Divs and Spans are used to group elements together. Think of them as containers. Divs are block
+                    containers like a big box that you can use to put stuff inside it. Spans is like a small sticker
+                    that you can put on something. Its not a big box like a div its just for something you want to
+                    highlight.
+                </p>
+                <p>
+                    here is an example and output of what we should expect for our divs and spans
+                </p>
+                <p>
+                    now that you know a little bit about divs and spans lets try to make some divs and spans to get the
+                    crown!
+                </p>
+                <button type="button" class="start-button" onclick="startFunction()">Start</button>
+                <input type="text" placeholder="Crown"></input>
+                <button type="button" class="submit-crown" onclick="submitFunction()">Submit</button>
+            </div>
+            <!-- Challenge 4-->
+            <!-- Talk about the basics of styling-->
+            <button type="button" class="collapsible" id="collapsible">HTML Layout</button>
+            <div class="bar-content">
+                <p class="challenge-text"> Now I know ... the coding process takes FOREVER! but we are almost done with
+                    the basics!
+                    lets go ahead and go over the HTML layout. The layout of a webpage is how the elements are arranged
+                    on the page.
+                    The layout is what makes the webpage look good. The layout is what makes the webpage easy to read.
+                    The layout is what makes the webpage easy to use. This is used by elements like header, nav, main,
+                    article, section, aside and footer
+                </p>
+                <p>
+                    The header is the top used for the website logo like code.college! the navigation bar is the menu
+                    above that lists the home, forts, chat, help and login button. Next we have the side bar that could
+                    be used for
+                    ads, links or other information. Content is the main part of the webpage where the main information
+                    is displayed. The footer is the bottom of the webpage where you can put the copyright information.
+                    One other thing
+                    we should note are comments when you want to add a comment to your code you can use the
+                    <!-- comment here --> tag
+                    Behind the scenes of this webpage are many MANY comments that help the developers understand the
+                    code and what it does.
+                </p>
+                <p>
+                    With this knowledge lets try to make a webpage layout to get the crown!
+                </p>
+                <button type="button" class="start-button" onclick="startFunction()">Start</button>
+                <input type="text" placeholder="Crown"></input>
+                <button type="button" class="submit-crown" onclick="submitFunction()">Submit</button>
+            </div>
+            <div class="bar-content">
+                <p class="challenge-text"> Now I know ... the coding process takes FOREVER! but we are almost done with
+                    the basics!
+                    lets go ahead and go over the HTML layout. The layout of a webpage is how the elements are arranged
+                    on the page.
+                    The layout is what makes the webpage look good. The layout is what makes the webpage easy to read.
+                    The layout is what makes the webpage easy to use. This is used by elements like header, nav, main,
+                    article, section, aside and footer
+                </p>
+                <p>
+                    The header is the top used for the website logo like code.college! the navigation bar is the menu
+                    above that lists the home, forts, chat, help and login button. Next we have the side bar that could
+                    be used for
+                    ads, links or other information. Content is the main part of the webpage where the main information
+                    is displayed. The footer is the bottom of the webpage where you can put the copyright information.
+                    One other thing
+                    we should note are comments when you want to add a comment to your code you can use the
+                    <!-- comment here --> tag
+                    Behind the scenes of this webpage are many MANY comments that help the developers understand the
+                    code and what it does.
+                </p>
+                <p>
+                    With this knowledge lets try to make a webpage layout to get the crown!
+                </p>
+                <button type="button" class="start-button" onclick="startFunction()">Start</button>
+                <input type="text" placeholder="Crown"></input>
+                <button type="button" class="submit-crown" onclick="submitFunction()">Submit</button>
+            </div>
+            <button type="button" class="collapsible" id="collapsible">HTML Tags</button>
+            <div class="bar-content">
+                <p class="challenge-text">
+                    <!-- Tags about HTML here-->
+                </p>
+                <button type="button" class="start-button" onclick="startFunction()">Start</button>
+                <input type="text" placeholder="Crown"></input>
+                <button type="button" class="submit-crown" onclick="submitFunction()">Submit</button>
+            </div>
+            <button type="button" class="collapsible" id="collapsible">Hyperlinks</button>
+            <div class="bar-content">
+                <p class="challenge-text">
+                    <!-- Hyperlink Information here-->
+                </p>
+                <button type="button" class="start-button" onclick="startFunction()">Start</button>
+                <input type="text" placeholder="Crown"></input>
+                <button type="button" class="submit-crown" onclick="submitFunction()">Submit</button>
+            </div>
+            <button type="button" class="collapsible" id="collapsible">Creating Lists</button>
+            <div class="bar-content">
+                <p class="challenge-text">
+                    <!-- List information-->
+                </p>
+                <button type="button" class="start-button" onclick="startFunction()">Start</button>
+                <input type="text" placeholder="Crown"></input>
+                <button type="button" class="submit-crown" onclick="submitFunction()">Submit</button>
+            </div>
+            <button type="button" class="collapsible" id="collapsible">Media</button>
+            <div class="bar-content">
+                <p class="challenge-text">
+                    <!-- Media information-->
+                </p>
+                <button type="button" class="start-button" onclick="startFunction()">Start</button>
+                <input type="text" placeholder="Crown"></input>
+                <button type="button" class="submit-crown" onclick="submitFunction()">Submit</button>
+            </div>
+            <button type="button" class="collapsible" id="collapsible">Tables</button>
+            <div class="bar-content">
+                <p class="challenge-text">
+                    <!-- Table infrmation-->
+                </p>
+                <button type="button" class="start-button" onclick="startFunction()">Start</button>
+                <input type="text" placeholder="Crown"></input>
+                <button type="button" class="submit-crown" onclick="submitFunction()">Submit</button>
+            </div>
+            <button type="button" class="collapsible" id="collapsible">Attributes</button>
+            <div class="bar-content">
+                <p class="challenge-text">
+                    <!-- Attributes information-->
+                </p>
+                <button type="button" class="start-button" onclick="startFunction()">Start</button>
+                <input type="text" placeholder="Crown"></input>
+                <button type="button" class="submit-crown" onclick="submitFunction()">Submit</button>
+            </div>
+            <button type="button" class="collapsible" id="collapsible">Intro to CSS</button>
+            <div class="bar-content">
+                <p class="challenge-text">
+                </p>
+                <button type="button" class="start-button" onclick="startFunction()">Start</button>
+                <input type="text" placeholder="Crown"></input>
+                <button type="button" class="submit-crown" onclick="submitFunction()">Submit</button>
+            </div>
+            <button type="button" class="collapsible" id="collapsible">Selectors</button>
+            <div class="bar-content">
+                <p class="challenge-text">
+                </p>
+                <button type="button" class="start-button" onclick="startFunction()">Start</button>
+                <input type="text" placeholder="Crown"></input>
+                <button type="button" class="submit-crown" onclick="submitFunction()">Submit</button>
+            </div>
+            <button type="button" class="collapsible" id="collapsible">Colors</button>
+            <div class="bar-content">
+                <p class="challenge-text">
+                </p>
+                <button type="button" class="start-button" onclick="startFunction()">Start</button>
+                <input type="text" placeholder="Crown"></input>
+                <button type="button" class="submit-crown" onclick="submitFunction()">Submit</button>
+            </div>
+            <button type="button" class="collapsible" id="collapsible">Fonts & Text</button>
+            <div class="bar-content">
+                <p class="challenge-text">
+                </p>
+                <button type="button" class="start-button" onclick="startFunction()">Start</button>
+                <input type="text" placeholder="Crown"></input>
+                <button type="button" class="submit-crown" onclick="submitFunction()">Submit</button>
+            </div>
+            <button type="button" class="collapsible" id="collapsible">Margin & Padding</button>
+            <div class="bar-content">
+                <p class="challenge-text">
+                </p>
+                <button type="button" class="start-button" onclick="startFunction()">Start</button>
+                <input type="text" placeholder="Crown"></input>
+                <button type="button" class="submit-crown" onclick="submitFunction()">Submit</button>
+            </div>
+            <button type="button" class="collapsible" id="collapsible">Flexbox</button>
+            <div class="bar-content">
+                <p class="challenge-text">
+                </p>
+                <button type="button" class="start-button" onclick="startFunction()">Start</button>
+                <input type="text" placeholder="Crown"></input>
+                <button type="button" class="submit-crown" onclick="submitFunction()">Submit</button>
+            </div>
+            <button type="button" class="collapsible" id="collapsible">Download VS Code</button>
+            <div class="bar-content">
+                <p class="challenge-text"> Okay now this stuff that I am going to teach you next is going to be WHY I
+                    created this website.
+                    YES. all of these websites teach you how to code but they don't teach you how to make a website.
+                    I am going to teach you how to make a website. Okay now STAY WITH ME. and please watch my videos if
+                    you have any questions hehe.
+                    Without furthur ado lets go ahead and download VS code and get started with the basics of making a
+                    website.
+                </p>
+                <p>
+                    The first thing you need to do is download VS code. VS code is a text editor that you can use to
+                    write your code.
+                    You can download it from the link below.
+                    <a href="https://code.visualstudio.com/download">Download VS Code</a>
+                </p>
+                <p>
+                    then you say OMG which one do I download!?
+                    <img src="fire.gif" alt="fire gif" style="width:100px;height:100px;">
+                    dont worry we are going to download one for which ever operating system you are using. Now give
+                    yourself a round of applause because this is your new best friend.
+                    <img src="patrick.jpg" alt="patrick meme" style="width:100px;height:100px;">
+                    So why do I need this? Well this is going to be the home for your code and where you will be able to
+                    see real life
+                    changes to your code. Now we are going to shift over to the basics of VS code. Now lets create your
+                    first folder by clicking on Open
+                    Most workspaces are created in our Documents folder. So lets go ahead and create a new folder in
+                    your Documents folder.
+                    Once you create that folder go ahead and open it in VS code. Now you are ready to start coding!
+                    Now we are going to create a new file by clicking on the new file button and here use the
+                    boilerplate code that we learned in the first challenge.
+                </p>
+                <p>In order to get the crown for this challenge please upload your index.html file in the space below.
+                    If all looks well you will recieve the crown!</p>
+
+                <!-- Add a file reader -->
+                <button type="button" class="start-button" onclick="startFunction()">Start</button>
+                <input type="text" placeholder="Crown"></input>
+                <button type="button" class="submit-crown" onclick="submitFunction()">Submit</button>
+            </div>
+            <button type="button" class="collapsible" id="collapsible">VS Code Files</button>
+            <div class="bar-content">
+                <p class="challenge-text">
+                    Okay so you downloaded VS code and you created a index.html file. Lets go ahead and go into the WHY?
+                    (my favoirte question about everything).
+                    WHY did i create a index.html file? Files are used to store information and need to end with ".html"
+                    to let the computer know that it is a webpage.
+                    HTML is the language for webpages so the browser knows how to display/read the information.
+                    Now the next part ISNT required but its important as developers for us to learn how to publish our
+                    websites.
+                </p>
+                <p>
+                    Now you have your files but keep in mind that you are the only one that can see them. Other people
+                    cant view the website.... YET.
+                    <img src="hehe.jpg" alt="hehe meme" style="width:100px;height:100px;">
+                </p>
+                <button type="button" class="start-button" onclick="startFunction()">Start</button>
+                <input type="text" placeholder="Crown"></input>
+                <button type="button" class="submit-crown" onclick="submitFunction()">Submit</button>
+            </div>
+
+
+
+        </div> <!-- End of level-bar-container-->
+    </div>
+
+    </div>
+    <script src="script.js"></script>
+
+</body>
+
+
+</html>
+
+
+<!--  Basic HTML to add more challenges
+            <button type="button" class="collapsible" id="collapsible">Challenge 4</button>
+            <div class="bar-content">
+                <p class="challenge-text"> 
+                </p>
+                <button type="button" class="start-button" onclick="startFunction()">Start</button>
+                <input type="text" placeholder="Crown"></input>
+                <button type="button" class="submit-crown" onclick="submitFunction()">Submit</button>
+            </div>
+        -->

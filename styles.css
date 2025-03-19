@@ -1,0 +1,274 @@
+/* Base body styles */
+body {
+    font-size: 18px;
+    background-color: black;
+    font-family: monospace, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    /* Centers content horizontally */
+    align-items: center;
+    /* Centers content vertically */
+    min-height: 100vh;
+    /* Ensures full viewport height */
+}
+
+.content {
+    width: 50%;
+    max-width: 1200px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 1200px) {
+    .content {
+        width: 100%;
+        /* Takes up full width on smaller screens */
+        padding: 10px;
+        /* Adjusts padding for smaller screens */
+    }
+
+    .bar {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .desktop-image {
+        width: 100%;
+        height: auto;
+    }
+
+}
+
+/* Paragraph text styling */
+p {
+    color: #f4f4f4;
+}
+
+/* Headings styling */
+p,
+h4,
+h2,
+h3 {
+    padding: 20px;
+    margin: 0;
+}
+
+h2,
+h3,
+h4 {
+    color: #779ecb;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+}
+
+/* Image styling */
+img {
+    width: 100%;
+    /* Adjusts width to be fully responsive */
+    height: auto;
+    /* Keeps aspect ratio intact */
+    padding-top: 50px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Navbar styles */
+.nav-bar {
+    width: 100%;
+    background: #333;
+    padding: 10px 0;
+    position: relative;
+    top: 0;
+}
+
+/* Menu items container */
+.menu {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+/* Menu links styling */
+.menu a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+}
+
+.menu a:hover,
+.challenge-nav-bar a:hover {
+    background: #f5f5f5;
+    color: black;
+}
+
+/* Navbar list item styles */
+li {
+    padding: 10px;
+}
+
+/* Flexbox layout for container */
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    padding: 10px;
+
+}
+
+/* Row styles */
+.row {
+    display: flex;
+}
+
+/* Column styles for the flex container */
+.html-css-icon,
+.challenge2,
+.challenge3 {
+    flex: 25%;
+    /* Each column takes up 25% of the space */
+    padding: 5px;
+}
+
+/* Column image styling */
+.html-css-icon img,
+.challenge2 img,
+.challenge3 img {
+    width: 100%;
+    height: auto;
+}
+
+.html-css-icon img:hover,
+.challenge2 img:hover,
+.challenge3 img:hover {
+    transform: scale(1.05);
+    transition: transform 0.1s;
+    cursor: pointer;
+}
+
+.level-bar-container {
+    margin-top: 20px;
+}
+
+.bar {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    margin: 10px 0;
+    cursor: pointer;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bar span {
+    font-size: 18px;
+}
+
+.content.open {
+    display: block;
+    max-height: 500px;
+    /* Arbitrary large value */
+}
+
+.collapsible {
+    background-color: #333;
+    color: #f5f5f5;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    font-family: monospace, sans-serif;
+    margin-top: 10px;
+    border-radius: 5px;
+    height: 50px;
+
+}
+
+.active,
+.collapsible:hover {
+    background-color: #779ecb;
+}
+
+.bar-content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #333;
+
+}
+
+.challenge-text {
+    font-family: monospace, sans-serif;
+    font-size: 15px;
+}
+
+.desktop-image {
+    min-width: 1024px;
+    min-height: 100%;
+    width: 100%;
+    height: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+}
+
+.challenge-nav-bar {
+    overflow: hidden;
+    background-color: #333;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.challenge-nav-bar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.coding-example {
+    background-color: grey;
+
+
+}
+
+.start-button,
+.submit-button {
+    background-color: #779ecb;
+    color: black;
+    margin-bottom: 20px;
+    height: 30px;
+    width: 60px;
+    border-radius: 5px;
+}
+
+.start-button:hover,
+.submit-button:hover {
+    cursor: pointer;
+}
+
+.crown-input {
+    width: 300px;
+    height: 27px;
+}
