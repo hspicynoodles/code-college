@@ -42,6 +42,18 @@ function homeButtonClick() {
 function chatButtonClick() {
     window.location.href = "chat.html";
 }
+function run() {
+    let htmlCode = document.getElementById("html-editor");
+    let cssCode = document.getElementById("css-editor");
+    let jsCode = document.getElementById("javascript-editor");
+
+    let output = document.getElementById("output");
+
+    output.contentDocument.body.innerHTML = htmlCode.value + "<style>" + cssCode.value + "</style>";
+
+    output.contentWindow.eval(jsCode.value);
+
+}
 
 /*
 function navBar(){

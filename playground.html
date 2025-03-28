@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>code.college playground</title>
+    <link rel="stylesheet" href="playground.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <div class="content">
+        <div class="nav-bar">
+            <ul class="menu">
+                <li><a href="#home" id="home-button" onclick="homeButtonClick()">Home</a></li>
+                <li><a href="#forts">Forts</a></li>
+                <li><a href="#chat" id="chat-button" onclick="chatButtonClick()">Chat</a></li>
+                <li><a href="#help">Help</a></li>
+                <li><a href="#login">Login</a></li>
+            </ul>
+        </div>
+
+        <section class="playground-container">
+            <h1>code.college.playground</h1>
+            <div class="editor">
+                <div class="left">
+                    <label><i class='bx bxl-html5'></i>HTML</label>
+                    <textarea id="html-editor" class="editor-textarea" spellcheck="false" onkeyup="run()"></textarea>
+                    <label><i class='bx bxl-css3'></i>CSS</label>
+                    <textarea id="css-editor" class="editor-textarea" spellcheck="false" onkeyup="run()"></textarea>
+                    <label><i class='bx bxl-javascript'></i>JavaScript</label>
+                    <textarea id="javascript-editor" class="editor-textarea" spellcheck="false"
+                        onkeyup="run()"></textarea>
+                </div>
+                <div class="right">
+                    <label><i class='bx bx-cool'></i>Output</label>
+                    <iframe id="output"></iframe>
+
+                </div>
+            </div>
+        </section>
+
+
+        <script src="script.js"></script>
+</body>
+
+</html>
