@@ -88,41 +88,52 @@
                 </p>
                 <div class="coding-example">
                     <p class="code-text">
-                        boilerplate test text
-                        <!-- figure out how to put the boilerplate code -->
 
-                        <!--  This is the boilerplate code that we will be expaning 
-                        <!DOCTYPE html>
-                        <html lang="en">
+                        <!-- // &lt; is a '<' and &gt; is a '>' -->
+                        &lt;!DOCTYPE html&gt;<br>
+                        &lt;html lang="en"&gt;
 
-                        <head>
-                            <meta charset="UTF-8">
-                            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                            <meta http-equiv="X-UA-Compatible" content="ie=edge">
-                            <title>code.college</title>
-                            <link rel="stylesheet" href="styles.css">
-                        </head>
+                        &lt;head&gt;<br>
+                        &nbsp;&nbsp;&lt;meta charset="UTF-8"&gt;<br>
+                        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;<br>
 
-                        <body>
+                        &lt;meta http-equiv="X-UA-Compatible" content="ie=edge"&gt;<br>
+                        &lt;title&gt;HTML 5 Boilerplate&lt;title&gt;<br>
+                        &lt;link rel="stylesheet" href="style.css"&gt;<br>
+                        &lt;/head&gt;<br>
+                        &lt;body&gt;<br>
+                        &lt;script src="index.js"&gt;&lt;/script&gt;<br>
+                        &lt;/body&gt;<br>
+                        &lt;/html&gt;<br>
 
-                            <script src="script.js"></script>
-                        </body>
 
-                        </html>
-                    -->
                     </p>
-                    <p class="comment-text">
-                        this is a comment
-                    </p>
-
                 </div>
-                <p>
-                    Now you try and make some boilerplate code to get the crown!
+                <p class="challenge-text">
+                    Now 99% of the time you will not need to use this boilerplate code because most of the time you will
+                    be using a text editor like VS code but its importantn to know what it is and how it works.
+                </p>
+                <ul class="challenge-text">
+                    <li>!DOCTYPE html: All html documents must start with Doctype decloartaion this is information to
+                        the broser about what documents type this is </li>
+                    <li>html: the html tag is used to define elements and structure a web page so all of your content
+                        for a webpage will be in this tag </li>
+                    <li>meta: is used to tell the browser how to read the text and the page desrcription</li>
+                    <li>head: is where the page thinks. This doesnt show up on the screen but it tells the page
+                        imporatnt things like getting dressed and ready before walking into a room.</li>
+                    <li>link: this is where we are going to LINK our CSS file so our webpage can wear whatever CSS
+                        decalres.</li>
+                    <li>body: this is what is on the screen, the page is wearing text, buttons, pictures, etc.</li>
+                    <li>script: script is where we are going to link to make the page move and do things.</li>
+                </ul>
+                <p class="challenge-text">
+                    Now that you know a little bit about HTML and CSS lets try to make some boilerplate code to get the
+                    crown!
                 </p>
 
                 <!-- when the start button is clicked the crown and submit placeholders should show otherwise they are hidden-->
                 <button type="button" class="start-button" onclick="startFunction()">Start</button>
-                <input type="text" class="crown-input" placeholder="Crown"></input>
+                <input type="text" class="crown-input" placeholder="Crown" id="crown-input"></input>
                 <button type="button" class="submit-button" onclick="submitFunction()">Submit</button>
             </div>
 
@@ -131,20 +142,21 @@
             <div class="bar-content">
                 <p class="challenge-text"> Okay! Yay you were able to make a boiler plate for html!
                     <img src="sarcastic.gif" alt="sarcastic gif" style="width:48px;height:48px;">
-                    Now what? The hell am I supposed to do with this? Well, dont panic just yet! Now we are going to go
+                    Now what? The heck am I supposed to do with this? Well, dont panic just yet! Now we are going to go
                     into the basics of HTML.
+
                     <!-- Talk about headers paragraphs-->
                 </p>
                 <p class="challenge-text">
                     lets talk about the structure of code.college. Everything here on the website is inside of our HTML
                     boilerplate. The first thing you see is the header. The header is where you put the title of your
-                    webpage. The title is what shows up on the tab of your browser. The next thing
+                    webpage. This title is what shows up on the tab of your browser where the its where the
+                    http://coded.college.com comes from. The next thing
                     you see is the body. The body is where you put all the content of your webpage. This is where you
-                    put all the text, images, and videos that you want to show up on your webpage. The body is like the
+                    see all the text, images, and videos that you want to show up on your webpage. The body is like the
                     main part of your webpage. It is where all the action happens.
-
                 </p>
-                <p>
+                <p class="challenge-text">
                     Headers are represented by the &lt;h1&gt; to &lt;h6&gt; tags. The
                     &lt;h1&gt; tag is the largest header and the&lt;/h6&gt; tag
                     is the smallest header. Paragraphs are represented by the &lt;p&gt; tag and is used to create a
@@ -153,7 +165,7 @@
                     before the element name.
                 </p>
 
-                <p>
+                <p class="challenge-text">
                     Now that you know a little bit about headers and paragraphs lets try to make some headers and
                     paragraphs to get the crown!
                 </p>
@@ -168,7 +180,7 @@
             <div class="bar-content">
                 <p class="challenge-text"> Okay yay! We see what headers are now and we can go ahead and learn about my
                     next favorite HTML concepts. Divs and Spans!
-                    <img src="keepGoing.jpg" alt="keep going meme" style="width:48px;height:48px;">
+                    <img src="keepGoing.jpg" alt="keep going meme" style="width:100px;height:100px;">
                     Divs and Spans are used to group elements together. Think of them as containers. Divs are block
                     containers like a big box that you can use to put stuff inside it. Spans is like a small sticker
                     that you can put on something. Its not a big box like a div its just for something you want to
@@ -213,7 +225,7 @@
                     With this knowledge lets try to make a webpage layout to get the crown!
                 </p>
                 <button type="button" class="start-button" onclick="startFunction()">Start</button>
-                <input type="text" placeholder="Crown"></input>
+                <input type="text" placeholder="Crown" id="crown-input"></input>
                 <button type="button" class="submit-crown" onclick="submitFunction()">Submit</button>
             </div>
             <div class="bar-content">
@@ -241,7 +253,7 @@
                     With this knowledge lets try to make a webpage layout to get the crown!
                 </p>
                 <button type="button" class="start-button" onclick="startFunction()">Start</button>
-                <input type="text" placeholder="Crown"></input>
+                <input type="text" placeholder="Crown" id="crown-input"></input>
                 <button type="button" class="submit-crown" onclick="submitFunction()">Submit</button>
             </div>
             <button type="button" class="collapsible" id="collapsible">HTML Tags</button>
@@ -259,7 +271,7 @@
                     <!-- Hyperlink Information here-->
                 </p>
                 <button type="button" class="start-button" onclick="startFunction()">Start</button>
-                <input type="text" placeholder="Crown"></input>
+                <input type="text" placeholder="Crown">
                 <button type="button" class="submit-crown" onclick="submitFunction()">Submit</button>
             </div>
             <button type="button" class="collapsible" id="collapsible">Creating Lists</button>
