@@ -5,16 +5,104 @@ const crownInput = document.getElementById("crown-input");
 const htmlCssIcon = document.getElementById("html-css-icon");
 const homeButton = document.getElementById("home-button")
 const chatButton = document.getElementById("chat-button");
+const loginEmail = document.getElementById("email-input");
+const loginPassword = document.getElementById("password-input");
+const signupEmail = document.getElementById("email-signup");
+const signupPassword = document.getElementById("password-signup");
+const helpButton = document.getElementById("help-button");
+
+
+
+
 let currentCrownPassword = "";
+let i;
+import { initializeApp } from 'firebase/app';
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth'; // import the firebase auth and create Email and Password
+//import { getAuth, sendPasswordResetEmail } from "firebase/auth";
 //import OpenAI from "openai"; // import the OpenAI library
 // const client = new OpenAI(); // create a new instance of the OpenAi client
 
 
 
+// Authentication
 
-//Challenge Passwords 
-const password1 = "code.college/Cr0wn!Z9@tQ7#Lx2M";
+const firebaseConfig = {
+    apiKey: "AIzaSyChnnGJz9TmEyCU6uqoCgKayiNd7o0npSc",
+    authDomain: "code-college-cf1e0.firebaseapp.com",
+    projectId: "code-college-cf1e0",
+    storageBucket: "code-college-cf1e0.firebasestorage.app",
+    messagingSenderId: "677458446671",
+    appId: "1:677458446671:web:b421d9f6d456b55e315d3a",
+    measurementId: "G-Y5RXZS47TX"
+};
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app); // get the firebase auth ready
 
+
+// Sign up new users
+document.getElementById("button-signup").addEventListener("click", (e) => {
+    e.preventDefault();
+    const email = signupEmail.value;
+    const password = signupPassword.value; // get the email and password value from the input field
+
+    createUserWithEmailAndPassword(auth, email, password) // create a new user with email and password 
+        .then((userCredential) => {
+            // returns promise if we sucessfully create a user 
+            // Signed in
+            const user = userCredential.user;
+            console.log("User" + email + "created successfully");
+
+        })
+        //if it fails throw a catch 
+        .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+
+        });
+
+})
+
+
+
+
+// Sign in existing users
+document.getElementById("button-login").addEventListener("click", (e) => {
+
+    e.preventDefault(); // prevent the default form submission
+    const email = loginEmail.value; // get the email value from the input field
+    const password = loginPassword.value; // get the password value from the input field
+
+    signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+            // Signed in 
+            const user = userCredential.user;
+            console.log("User signed in: ", user); // log the user to the console for testing purposes
+            window.location.href = "home.html";
+        })
+        .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+
+            const displayError = document.getElementById("error-msg"); // get the error message element
+            displayError.innerHTML = errorMessage; // set the error message to the inner html of the element
+            displayError.style.color = "red"; // set the color of the error message to red
+            displayError.style.display = "block"; // display the error message to the user
+        });
+})
+
+// forgot password for exisiting user 
+/* 
+sendPasswordResetEmail(auth, email)
+    .then(() => {
+        //Password reset email sent!
+        console.log("Password rest email sent to " + email); 
+        })
+        .catch((error) => {
+            const errorCode = error.code; 
+            const errorMessage = error.message; 
+            // display the error message to the user
+*/
 
 
 
@@ -33,10 +121,13 @@ for (i = 0; i < coll.length; i++) { // loop through all the collapsible buttons
     });
 }
 
-function htmlCssWebpage() {
-    window.location.href = "challenge1.html";
+/*
+htmlCssIcon.addEventListener("click", (e) => {
+    e.preventDefault(); // prevent the default form submission
+    window.location.href = "htmlCss.html"; // redirect to the html and css page
+});
+*/
 
-}
 // open up a new window when the user clicks on the start button
 function startFunction() {
     window.open("playground.html", "_blank"); // open the playground.html in a new window   
@@ -80,7 +171,7 @@ function generatePassword() {
     let password = "";
 
     //loop through the charset 
-    for (let i = 0, n = charset.length; i < 14; i++) {
+    for (i = 0, n = charset.length; i < 14; i++) {
         password += charset.charAt(Math.floor(Math.random() * charset.length)); // get a random character from the charset
     }
 
@@ -93,6 +184,11 @@ function homeButtonClick() {
 function chatButtonClick() {
     window.location.href = "chat.html";
 }
+document.getElementById("button-signup").addEventListener("click", (e) => {
+    console.log("Sign up button clicked");
+    window.location.href = "signUp.html"; // redirect to the signup page
+})
+
 function run() {
     let htmlCode = document.getElementById("html-editor");
     let cssCode = document.getElementById("css-editor");
@@ -105,7 +201,19 @@ function run() {
     output.contentWindow.eval(jsCode.value);
 
 }
+/*
 
+document.getElementById("button-back").addEventListener("click", (e) => {
+    console.log("Sign up button clicked");
+    window.location.href = "index.html"; // redirect to the signup page
+})
+
+*/
+
+helpButton.addEventListener("click", (e) => {
+    console.log("Home button clicked");
+    window.location.href = "home.html"; // redirect to the signup page
+})
 /*
 function navBar(){
     if(homeButton === true){
