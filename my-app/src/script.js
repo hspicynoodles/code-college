@@ -10,12 +10,18 @@ const loginPassword = document.getElementById("password-input");
 const signupEmail = document.getElementById("email-signup");
 const signupPassword = document.getElementById("password-signup");
 const helpButton = document.getElementById("help-button");
+const buttonSignUp = document.getElementById("button-signup");
+const buttonLogin = document.getElementById("button-login");
+const forgotPassword = document.getElementById("forgot-pass");
+const forgotPassButton = document.getElementById("forgotpass-submit-button");
+const backButton = document.getElementById("button-back");
 
 
 
 
 let currentCrownPassword = "";
 let i;
+import e from 'cors';
 import { initializeApp } from 'firebase/app';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth'; // import the firebase auth and create Email and Password
 //import { getAuth, sendPasswordResetEmail } from "firebase/auth";
@@ -38,73 +44,102 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app); // get the firebase auth ready
+/*
+if (buttonSignUp) {
+    // Sign up new users
+    function signUp() {
+        document.getElementById("button-signup").addEventListener("click", (e) => {
+            e.preventDefault();
+            const email = signupEmail.value;
+            const password = signupPassword.value; // get the email and password value from the input field
 
+            createUserWithEmailAndPassword(auth, email, password) // create a new user with email and password 
+                .then((userCredential) => {
+                    // returns promise if we sucessfully create a user 
+                    // Signed in
+                    const user = userCredential.user;
+                    console.log("User" + email + "created successfully");
 
-// Sign up new users
-document.getElementById("button-signup").addEventListener("click", (e) => {
-    e.preventDefault();
-    const email = signupEmail.value;
-    const password = signupPassword.value; // get the email and password value from the input field
+                })
+                //if it fails throw a catch 
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
 
-    createUserWithEmailAndPassword(auth, email, password) // create a new user with email and password 
-        .then((userCredential) => {
-            // returns promise if we sucessfully create a user 
-            // Signed in
-            const user = userCredential.user;
-            console.log("User" + email + "created successfully");
+                });
 
         })
-        //if it fails throw a catch 
-        .catch((error) => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
 
-        });
-
-})
-
-
-
-
-// Sign in existing users
-document.getElementById("button-login").addEventListener("click", (e) => {
-
-    e.preventDefault(); // prevent the default form submission
-    const email = loginEmail.value; // get the email value from the input field
-    const password = loginPassword.value; // get the password value from the input field
-
-    signInWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-            // Signed in 
-            const user = userCredential.user;
-            console.log("User signed in: ", user); // log the user to the console for testing purposes
-            window.location.href = "home.html";
-        })
-        .catch((error) => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
-
-            const displayError = document.getElementById("error-msg"); // get the error message element
-            displayError.innerHTML = errorMessage; // set the error message to the inner html of the element
-            displayError.style.color = "red"; // set the color of the error message to red
-            displayError.style.display = "block"; // display the error message to the user
-        });
-})
-
-// forgot password for exisiting user 
-/* 
-sendPasswordResetEmail(auth, email)
-    .then(() => {
-        //Password reset email sent!
-        console.log("Password rest email sent to " + email); 
-        })
-        .catch((error) => {
-            const errorCode = error.code; 
-            const errorMessage = error.message; 
-            // display the error message to the user
+    }
+}
 */
 
+if (buttonLogin) {
+    // Sign in existing users
+    document.getElementById("button-login").addEventListener("click", (e) => {
 
+        e.preventDefault(); // prevent the default form submission
+        const email = loginEmail.value; // get the email value from the input field
+        const password = loginPassword.value; // get the password value from the input field
+
+        signInWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                // Signed in 
+                const user = userCredential.user;
+                console.log("User signed in: ", user); // log the user to the console for testing purposes
+                window.location.href = "home.html";
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+
+                const displayError = document.getElementById("error-msg"); // get the error message element
+                displayError.innerHTML = errorMessage; // set the error message to the inner html of the element
+                displayError.style.color = "red"; // set the color of the error message to red
+                displayError.style.display = "block"; // display the error message to the user
+            });
+    })
+}
+// forgot password for exisiting user 
+/*
+if (forgotPassButton) {
+    forgotPassButton.addEventListener("click", (e) => {
+        const email = document.getElementById("email-forgotpass").value;
+
+        sendPasswordResetEmail(auth, email)
+            .then(() => {
+                //Password reset email sent!
+                console.log("Password rest email sent to " + email);
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                const displayError = document.getElementById("error-message");
+                displayError.innerHTML = errorMessage; // set the error message to the inner html of the element
+                displayError.style.color = "red"; // set the color of the error message to red
+                displayError.style.display = "block"; // display the error message to the user
+
+
+                // display the error message to the user
+            });
+    })
+
+}
+*/
+if (forgotPassButton) {
+    forgotPassButton.addEventListener("click", (e) => {
+        e.preventDefault(); // prevent the default form submission
+        console.log("Forgot password button clicked");
+    });
+}
+if (backButton) {
+    backButton.addEventListener("click", (e) => {
+        e.preventDefault();
+        console.log("Back button clicked");
+        window.location.href = "index.html"; // redirect to the index page
+
+    });
+}
 
 // toggling code for bars
 // when the user clicks on challenge button the challenge should expand and show the first contents 
@@ -129,6 +164,12 @@ htmlCssIcon.addEventListener("click", (e) => {
 */
 
 // open up a new window when the user clicks on the start button
+
+if (startButton) {
+    startButton.addEventListener("click", startFunction)// call the start function to open the playground.html
+    console.log("Start button clicked");
+}
+
 function startFunction() {
     window.open("playground.html", "_blank"); // open the playground.html in a new window   
     const secretCrownStarter = "code.college/Cr0wn!";
@@ -184,10 +225,14 @@ function homeButtonClick() {
 function chatButtonClick() {
     window.location.href = "chat.html";
 }
-document.getElementById("button-signup").addEventListener("click", (e) => {
-    console.log("Sign up button clicked");
-    window.location.href = "signUp.html"; // redirect to the signup page
-})
+if (buttonSignUp) {
+    buttonSignUp.addEventListener("click", (e) => {
+        e.preventDefault();
+        console.log("Sign up button  clicked");
+        window.location.href = "signUp.html";
+    });
+}
+
 
 function run() {
     let htmlCode = document.getElementById("html-editor");
@@ -202,18 +247,19 @@ function run() {
 
 }
 /*
-
+ 
 document.getElementById("button-back").addEventListener("click", (e) => {
     console.log("Sign up button clicked");
     window.location.href = "index.html"; // redirect to the signup page
 })
-
+ 
 */
-
+/*
 helpButton.addEventListener("click", (e) => {
     console.log("Home button clicked");
     window.location.href = "home.html"; // redirect to the signup page
 })
+    */
 /*
 function navBar(){
     if(homeButton === true){
@@ -231,9 +277,26 @@ function navBar(){
             if(helpButton === true){
         window.location.href = "index.html"
     }
+ 
+}
+ 
+*/
+
+const challengeDiv = document.getElementById("html-css-icon");
+if (challengeDiv) {
+    challengeDiv.addEventListener("click", challenge);
+}
+// function to use openAi for getting the answer to the question
+function challenge() {
+    window.location.href = "challenge1.html" // open the challenge.html in a new window
+    console.log("Challenge button clicked");
 
 }
 
-*/
-
-// function to use openAi for getting the answer to the question
+if (forgotPassword) {
+    forgotPassword.addEventListener("click", (e) => {
+        e.preventDefault();
+        window.location.href = "forgotPass.html"; // redirect to the forgot password page
+        console.log("Forgot password button clicked");
+    });
+}

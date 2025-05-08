@@ -15,10 +15,16 @@
         <div class="nav-bar">
             <ul class="menu">
                 <li><a href="#home" id="home-button" onclick="homeButtonClick()">Home</a></li>
-                <li><a href="#forts">Forts</a></li>
+                <!--   <li><a href="#forts">Forts</a></li> -->
                 <li><a href="#chat" id="chat-button" onclick="chatButtonClick()">Chat</a></li>
                 <li><a href="#help">Help</a></li>
-                <li><a href="#login">Login</a></li>
+                <div class="dropdown">
+                    <li><a href="#help">Account</a></li>
+                    <div class="dropdown-content">
+                        <a href="#">Profile</a>
+                        <a href="#">Settings</a>
+                    </div>
+                </div>
             </ul>
         </div>
 
@@ -144,7 +150,7 @@
                 </p>
 
                 <!-- when the start button is clicked the crown and submit placeholders should show otherwise they are hidden-->
-                <button type="button" class="start-button" onclick="startFunction()">Start</button>
+                <button type="button" class="start-button" id="start-button">Start</button>
                 <input type="text" class="crown-input" placeholder="Crown" id="crown-input"></input>
                 <button type="button" class="submit-button" onclick="submitFunction()">Submit</button>
             </div>
@@ -350,7 +356,7 @@
                     ordered list to get the crown!
 
                 </p>
-                <button type="button" class="start-button" onclick="startFunction()">Start</button>
+                <button type="button" class="start-button">Start</button>
                 <input type="text" placeholder="Crown"></input>
                 <button type="button" class="submit-crown" onclick="submitFunction()">Submit</button>
             </div>

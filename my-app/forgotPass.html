@@ -12,15 +12,14 @@
 <body>
 
     <div class="login-container">
-        <h1 class="login-h1">Sign Up</h1>
-        <p>Email</p>
-        <input type="text" class="email-input" id="email-signup" placeholder="Email">
-        <p>Password</p>
-        <input type="password" class="password-input" id="password-signup" placeholder="Password">
+        <h1 class="login-h1">Forgot Password</h1>
+        <p class="forgotPassText">Please enter your email. If an account with that email exists, you will receive a link
+            shortly.</p>
+        <input type="text" class="email-input" id="email-forgotpass" placeholder="Email">
         <p id="error-message" style="color: red; display:none;">Invalid Credentials</p>
 
-        <button class="button-signup" id="button-signup" onclick="signUpPage()">Sign Up</button>
-        <button class="back-button" id="button-back">Back</button>
+        <button class="button-signup" id="forgotpass-submit-button">Submit</button>
+        <button class="button-signup" id="button-back">Back</button>
     </div>
     <script type="module" src="/src/script.js"></script>
     <!-- using module becuase we are using import ES6 Import Statements-->
