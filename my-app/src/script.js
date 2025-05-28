@@ -19,19 +19,29 @@ const backButton = document.getElementById("button-back");
 
 
 
+
 let currentCrownPassword = "";
 let i;
 import e from 'cors';
 import { initializeApp } from 'firebase/app';
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth'; // import the firebase auth and create Email and Password
+import { getFirestore } from 'firebase/firestore'; // importing cloud firestore
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } from 'firebase/auth'; // import the firebase auth and create Email and Password
+import { collection, addDoc } from 'firebase/firestore';
 //import { getAuth, sendPasswordResetEmail } from "firebase/auth";
-//import OpenAI from "openai"; // import the OpenAI library
+import OpenAI from "openai"; // import the OpenAI library
 // const client = new OpenAI(); // create a new instance of the OpenAi client
 
 
 
-// Authentication
+// OPEN AI 
+// how does it work? I am going to grab the code from html + js and send it to node.js server
+// then node.js will send the quesion to OPEN API and get the answer back 
+// then i shall display the answer in the challenge.html page
+// node.js is like javaScript but it runs on the server side and will read files like env
 
+
+//---------------------------------------------- Firebase Authentication ----------------------------------
+// Authentication
 const firebaseConfig = {
     apiKey: "AIzaSyChnnGJz9TmEyCU6uqoCgKayiNd7o0npSc",
     authDomain: "code-college-cf1e0.firebaseapp.com",
@@ -41,8 +51,9 @@ const firebaseConfig = {
     appId: "1:677458446671:web:b421d9f6d456b55e315d3a",
     measurementId: "G-Y5RXZS47TX"
 };
-// Initialize Firebase
+// Initialize Firebase and Cloud Firestore
 const app = initializeApp(firebaseConfig);
+const db = getFirestore(app); // get the firestore ready
 const auth = getAuth(app); // get the firebase auth ready
 /*
 if (buttonSignUp) {
@@ -100,6 +111,7 @@ if (buttonLogin) {
             });
     })
 }
+
 // forgot password for exisiting user 
 /*
 if (forgotPassButton) {
@@ -132,6 +144,20 @@ if (forgotPassButton) {
         console.log("Forgot password button clicked");
     });
 }
+
+try {
+    const docRef = await addDoc(collection(db, "users"), {
+        email: signupEmail.value,
+        challenge: "html and css",
+    });
+    console.log("Document written with ID: ", docRef.id);
+} catch (e) {
+    console.error("Error adding document: ", e);
+}
+
+
+//----------------------------------Events--------------------------------------------------------------
+
 if (backButton) {
     backButton.addEventListener("click", (e) => {
         e.preventDefault();
@@ -300,3 +326,15 @@ if (forgotPassword) {
         console.log("Forgot password button clicked");
     });
 }
+
+//gettting the current user IF a user is logged in
+onAuthStateChanged(auth, (user) => {
+    if (user) {
+        const uid = user.uid; // get the user id
+        console.log("User is logged in: ", user); // log the user to the console for testing purposes
+
+    } else {
+        console.log("No user is logged in");
+    }
+});
+
