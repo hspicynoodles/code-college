@@ -15,6 +15,8 @@ const buttonLogin = document.getElementById("button-login");
 const forgotPassword = document.getElementById("forgot-pass");
 const forgotPassButton = document.getElementById("forgotpass-submit-button");
 const backButton = document.getElementById("button-back");
+const accountButton = document.getElementById("account-button");
+const checkButton = document.getElementById("check-code");
 
 
 
@@ -166,6 +168,8 @@ if (backButton) {
 
     });
 }
+
+
 
 // toggling code for bars
 // when the user clicks on challenge button the challenge should expand and show the first contents 
@@ -338,3 +342,25 @@ onAuthStateChanged(auth, (user) => {
     }
 });
 
+// function to handle the check button on playground.html
+document.getElementById("check-code").addEventListener("click", async () => {
+    const input = document.getElementById("html-editor").value; // get the input text from the html editor
+
+    // fetch sends a request over the network and waits for a response
+    // we use await becuase fetch is an asynchronous function
+    // await only works inside an async function becuase it pauses the execution of the function until the promise is resolved
+    try {
+        const res = await fetch("http://localhost:3000/message", {
+            method: "POST",
+            headers: { 'Content-Type': 'application/json', },
+            //stringify converts a JavaScript object into a JSON string 
+            body: JSON.stringify({ message: input }) // send the input text to the server
+        });
+
+        const data = await res.json(); // get the response from the server once  the promise is resolved
+        document.getElementById("output-answer").innerText = data.reply;
+        console.log("Response from server: ", data.reply); // log the response to the console for testing purposes
+    } catch (error) {
+        document.getElementById("output-answer").innerText = "An error occurred while checking your code. Please try again.";
+    }
+}); 
