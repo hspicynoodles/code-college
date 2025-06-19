@@ -6,21 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>code.college</title>
-    <link rel="stylesheet" href="/src/styles.css">
+    <link rel="stylesheet" href="/src/index.css">
 </head>
 
 <body>
 
+    <!-- Signup Page-->
     <div class="login-container">
-        <h1 class="login-h1">Sign Up</h1>
-        <p>Email</p>
-        <input type="text" class="email-input" id="email-signup" placeholder="Email">
-        <p>Password</p>
-        <input type="password" class="password-input" id="password-signup" placeholder="Password">
-        <p id="error-message" style="color: red; display:none;">Invalid Credentials</p>
+        <div class="login-box login">
+            <form action="">
+                <h1>Sign Up</h1>
+                <div class="input-box">
+                    <input type="text" class="email-input" id="email-signup" placeholder="Email">
+                    <input type="password" class="password-input" id="password-signup" placeholder="Password">
+                </div>
+                <div id="signup-error-msg" class="signup-error-msg"></div>
+                <button class="btn" id="button-signup" onclick="signUpPage()">Sign Up</button>
+                <button class="btn" id="button-back">Back</button>
 
-        <button class="button-signup" id="button-signup" onclick="signUpPage()">Sign Up</button>
-        <button class="back-button" id="button-back">Back</button>
+            </form>
+        </div>
     </div>
     <script type="module" src="/src/script.js"></script>
     <!-- using module becuase we are using import ES6 Import Statements-->

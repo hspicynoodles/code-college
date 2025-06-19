@@ -16,13 +16,14 @@
             <ul class="menu">
                 <li><a href="#home" id="home-button" onclick="homeButtonClick()">Home</a></li>
                 <!--   <li><a href="#forts">Forts</a></li> -->
-                <li><a href="#chat" id="chat-button" onclick="chatButtonClick()">Chat</a></li>
-                <li><a href="#help">Help</a></li>
+                <!-- TODO: Add chatbot later for people when they need help-->
+                <!--  <li><a href="#chat" id="chat-button" onclick="chatButtonClick()">Chat</a></li> -->
                 <div class="dropdown">
                     <li><a href="#help">Account</a></li>
                     <div class="dropdown-content">
                         <a href="#">Profile</a>
                         <a href="#">Settings</a>
+                        <a href="#">Log Out</a>
                     </div>
                 </div>
             </ul>
@@ -152,7 +153,7 @@
                 <!-- when the start button is clicked the crown and submit placeholders should show otherwise they are hidden-->
                 <button type="button" class="start-button" id="start-button">Start</button>
                 <input type="text" class="crown-input" placeholder="Crown" id="crown-input"></input>
-                <button type="button" class="submit-button" onclick="submitFunction()">Submit</button>
+                <button type="button" class="submit-button" id="submit-button">Submit</button>
             </div>
 
             <!-- Challenge 2-->

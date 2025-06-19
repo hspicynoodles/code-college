@@ -4,12 +4,10 @@ var startButton = document.getElementById("start-button");
 const crownInput = document.getElementById("crown-input");
 const htmlCssIcon = document.getElementById("html-css-icon");
 const homeButton = document.getElementById("home-button")
-const chatButton = document.getElementById("chat-button");
 const loginEmail = document.getElementById("email-input");
 const loginPassword = document.getElementById("password-input");
 const signupEmail = document.getElementById("email-signup");
 const signupPassword = document.getElementById("password-signup");
-const helpButton = document.getElementById("help-button");
 const buttonSignUp = document.getElementById("button-signup");
 const buttonLogin = document.getElementById("button-login");
 const forgotPassword = document.getElementById("forgot-pass");
@@ -17,20 +15,17 @@ const forgotPassButton = document.getElementById("forgotpass-submit-button");
 const backButton = document.getElementById("button-back");
 const accountButton = document.getElementById("account-button");
 const checkButton = document.getElementById("check-code");
+const signUpDirectPage = document.getElementById("signupBtn");
+const submitButton = document.getElementById("submit-button");
 
 
 
-
-
-let currentCrownPassword = "";
 let i;
-import e from 'cors';
+let currentCrownPassword = ""; // variable to store the current crown password
 import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore'; // importing cloud firestore
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } from 'firebase/auth'; // import the firebase auth and create Email and Password
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, sendPasswordResetEmail } from 'firebase/auth'; // import the firebase auth and create Email and Password
 import { collection, addDoc } from 'firebase/firestore';
-//import { getAuth, sendPasswordResetEmail } from "firebase/auth";
-import OpenAI from "openai"; // import the OpenAI library
 // const client = new OpenAI(); // create a new instance of the OpenAi client
 
 
@@ -53,39 +48,45 @@ const firebaseConfig = {
     appId: "1:677458446671:web:b421d9f6d456b55e315d3a",
     measurementId: "G-Y5RXZS47TX"
 };
+
+
 // Initialize Firebase and Cloud Firestore
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app); // get the firestore ready
 const auth = getAuth(app); // get the firebase auth ready
-/*
+
 if (buttonSignUp) {
     // Sign up new users
-    function signUp() {
-        document.getElementById("button-signup").addEventListener("click", (e) => {
-            e.preventDefault();
-            const email = signupEmail.value;
-            const password = signupPassword.value; // get the email and password value from the input field
+    document.getElementById("button-signup").addEventListener("click", (e) => {
+        console.log("Sign up button clicked");
+        e.preventDefault();
+        const email = signupEmail.value;
+        const password = signupPassword.value; // get the email and password value from the input field
 
-            createUserWithEmailAndPassword(auth, email, password) // create a new user with email and password 
-                .then((userCredential) => {
-                    // returns promise if we sucessfully create a user 
-                    // Signed in
-                    const user = userCredential.user;
-                    console.log("User" + email + "created successfully");
+        createUserWithEmailAndPassword(auth, email, password) // create a new user with email and password 
+            .then((userCredential) => {
+                // returns promise if we sucessfully create a user 
+                // Signed in
+                const user = userCredential.user;
+                console.log("User" + email + "created successfully");
 
-                })
-                //if it fails throw a catch 
-                .catch((error) => {
-                    const errorCode = error.code;
-                    const errorMessage = error.message;
+            })
+            //if it fails throw a catch 
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                console.log("Error creating user: " + errorMessage); // log the error message to the console for testing purposes
+                const displayError = document.getElementById("signup-error-msg"); // get the error message element
+                displayError.innerHTML = errorMessage; // set the error message to the inner html of the element
+                displayError.style.color = "red"; // set the color of the error message to red
+                displayError.style.display = "block"; // display the error message to the user
+            });
 
-                });
+    })
 
-        })
-
-    }
 }
-*/
+
+
 
 if (buttonLogin) {
     // Sign in existing users
@@ -106,7 +107,7 @@ if (buttonLogin) {
                 const errorCode = error.code;
                 const errorMessage = error.message;
 
-                const displayError = document.getElementById("error-msg"); // get the error message element
+                const displayError = document.getElementById("login-error-msg"); // get the error message element
                 displayError.innerHTML = errorMessage; // set the error message to the inner html of the element
                 displayError.style.color = "red"; // set the color of the error message to red
                 displayError.style.display = "block"; // display the error message to the user
@@ -114,11 +115,10 @@ if (buttonLogin) {
     })
 }
 
-// forgot password for exisiting user 
-/*
+// forgot password for exisiting user send reset email
 if (forgotPassButton) {
     forgotPassButton.addEventListener("click", (e) => {
-        const email = document.getElementById("email-forgotpass").value;
+        const email = document.getElementById("forgotPassEmailInput").value;
 
         sendPasswordResetEmail(auth, email)
             .then(() => {
@@ -129,34 +129,14 @@ if (forgotPassButton) {
                 const errorCode = error.code;
                 const errorMessage = error.message;
                 const displayError = document.getElementById("error-message");
+                console.log("Error sending password reset email: ", errorMessage);
                 displayError.innerHTML = errorMessage; // set the error message to the inner html of the element
                 displayError.style.color = "red"; // set the color of the error message to red
                 displayError.style.display = "block"; // display the error message to the user
-
-
-                // display the error message to the user
             });
     })
 
 }
-*/
-if (forgotPassButton) {
-    forgotPassButton.addEventListener("click", (e) => {
-        e.preventDefault(); // prevent the default form submission
-        console.log("Forgot password button clicked");
-    });
-}
-
-try {
-    const docRef = await addDoc(collection(db, "users"), {
-        email: signupEmail.value,
-        challenge: "html and css",
-    });
-    console.log("Document written with ID: ", docRef.id);
-} catch (e) {
-    console.error("Error adding document: ", e);
-}
-
 
 //----------------------------------Events--------------------------------------------------------------
 
@@ -168,8 +148,6 @@ if (backButton) {
 
     });
 }
-
-
 
 // toggling code for bars
 // when the user clicks on challenge button the challenge should expand and show the first contents 
@@ -186,13 +164,6 @@ for (i = 0; i < coll.length; i++) { // loop through all the collapsible buttons
     });
 }
 
-/*
-htmlCssIcon.addEventListener("click", (e) => {
-    e.preventDefault(); // prevent the default form submission
-    window.location.href = "htmlCss.html"; // redirect to the html and css page
-});
-*/
-
 // open up a new window when the user clicks on the start button
 
 if (startButton) {
@@ -202,11 +173,9 @@ if (startButton) {
 
 function startFunction() {
     window.open("playground.html", "_blank"); // open the playground.html in a new window   
-    const secretCrownStarter = "code.college/Cr0wn!";
-    currentCrownPassword = secretCrownStarter + generatePassword(); // generate a new password for each challenge
-    console.log(currentCrownPassword); // log the password to the console for testing purposes
-
-    return currentCrownPassword; // return the password to be used in the submit function
+    //const secretCrownStarter = "code.college/Cr0wn!";
+    // currentCrownPassword = secretCrownStarter + generatePassword(); // generate a new password for each challenge
+    //console.log(currentCrownPassword); // log the password to the console for testing purposes
 
 }
 
@@ -217,10 +186,13 @@ function submitFunction() {
     // the user clicks on a challenge a new password should be generated and after each challenge we should delete the password
     // and generate a new one for the next challenge
     const crownInput = document.getElementById("crown-input"); // get the input value
+    const savedCrownPassword = localStorage.getItem("crownPassword"); // get the saved crown password from local storage
 
-    if (crownInput.value.trim() === currentCrownPassword) {
+    console.log("current crown password: " + savedCrownPassword); // log the input value to the console for testing purposes
+    if (crownInput.value.trim() === savedCrownPassword) {
         document.getElementById("challenge1").style.display = "block"; // display the crown
         crownInput.value = ""; // Clear the input field
+        console.log("Correct password entered: " + savedCrownPassword); // log the correct
         const activeButton = document.querySelector(".collapsible.active");// querey selector helps find the active/open button
         if (activeButton) {
             activeButton.classList.remove("active"); // Remove the active style from button
@@ -236,81 +208,48 @@ function submitFunction() {
     }
 }
 
+if (submitButton) {
+    submitButton.addEventListener("click", (e) => {
+        e.preventDefault
+        submitFunction(); // call the submit function to check the input value
+    })
+}
+
 function generatePassword() {
     const charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+";
 
     let password = "";
 
     //loop through the charset 
+    let i, n;
     for (i = 0, n = charset.length; i < 14; i++) {
         password += charset.charAt(Math.floor(Math.random() * charset.length)); // get a random character from the charset
     }
 
-    console.log(password);
+    return password; // return the generated password}
 }
 
-function homeButtonClick() {
-    window.location.href = "index.html";
-}
-function chatButtonClick() {
-    window.location.href = "chat.html";
-}
-if (buttonSignUp) {
-    buttonSignUp.addEventListener("click", (e) => {
+// when the user clicks on home button it should redirect to the home page
+if (homeButton) {
+    homeButton.addEventListener("click", (e) => {
         e.preventDefault();
-        console.log("Sign up button  clicked");
-        window.location.href = "signUp.html";
-    });
+        console.log("Home button clicked");
+        window.location.href = "home.html"; // redirect to the home page
+    })
 }
-
 
 function run() {
     let htmlCode = document.getElementById("html-editor");
     let cssCode = document.getElementById("css-editor");
     let jsCode = document.getElementById("javascript-editor");
-
     let output = document.getElementById("output");
 
     output.contentDocument.body.innerHTML = htmlCode.value + "<style>" + cssCode.value + "</style>";
-
     output.contentWindow.eval(jsCode.value);
 
+
 }
-/*
- 
-document.getElementById("button-back").addEventListener("click", (e) => {
-    console.log("Sign up button clicked");
-    window.location.href = "index.html"; // redirect to the signup page
-})
- 
-*/
-/*
-helpButton.addEventListener("click", (e) => {
-    console.log("Home button clicked");
-    window.location.href = "home.html"; // redirect to the signup page
-})
-    */
-/*
-function navBar(){
-    if(homeButton === true){
-        window.location.href = "index.html"
-    }
-        if(fortSButton === true){
-        window.location.href = "index.html"
-    }
-            if(chatButton === true){
-        window.location.href = "index.html"
-    }
-            if(loginButton === true){
-        window.location.href = "index.html"
-    }
-            if(helpButton === true){
-        window.location.href = "index.html"
-    }
- 
-}
- 
-*/
+
 
 const challengeDiv = document.getElementById("html-css-icon");
 if (challengeDiv) {
@@ -342,25 +281,50 @@ onAuthStateChanged(auth, (user) => {
     }
 });
 
+if (signUpDirectPage) {
+    signUpDirectPage.addEventListener("click", (e) => {
+        e.preventDefault();
+        window.location.href = "signup.html"; // redirect to the signup page
+        console.log("Sign up button clicked");
+    });
+}
+
+// ---------------------------------- OpenAI API Integration ----------------------------------
 // function to handle the check button on playground.html
-document.getElementById("check-code").addEventListener("click", async () => {
-    const input = document.getElementById("html-editor").value; // get the input text from the html editor
+if (checkButton) {
+    //  startFunction();
 
-    // fetch sends a request over the network and waits for a response
-    // we use await becuase fetch is an asynchronous function
-    // await only works inside an async function becuase it pauses the execution of the function until the promise is resolved
-    try {
-        const res = await fetch("http://localhost:3000/message", {
-            method: "POST",
-            headers: { 'Content-Type': 'application/json', },
-            //stringify converts a JavaScript object into a JSON string 
-            body: JSON.stringify({ message: input }) // send the input text to the server
-        });
+    document.getElementById("check-code").addEventListener("click", async () => {
+        const input = document.getElementById("html-editor").value; // get the input text from the html editor
 
-        const data = await res.json(); // get the response from the server once  the promise is resolved
-        document.getElementById("output-answer").innerText = data.reply;
-        console.log("Response from server: ", data.reply); // log the response to the console for testing purposes
-    } catch (error) {
-        document.getElementById("output-answer").innerText = "An error occurred while checking your code. Please try again.";
-    }
-}); 
+
+        // fetch sends a request over the network and waits for a response
+        // we use await becuase fetch is an asynchronous function
+        // await only works inside an async function becuase it pauses the execution of the function until the promise is resolved
+        try {
+            const res = await fetch("http://localhost:3000/message", {
+                method: "POST",
+                headers: { 'Content-Type': 'application/json', },
+                //stringify converts a JavaScript object into a JSON string 
+                body: JSON.stringify({ message: input }) // send the input text to the server
+            });
+
+            const data = await res.json(); // get the response from the server once  the promise is resolved
+            const response = data.reply; // get the reply from the server response
+
+
+            if (response.toLowerCase().includes("correct")) {
+                const secretCrownStarter = "code.college/Cr0wn!";
+                currentCrownPassword = secretCrownStarter + generatePassword(); // generate a new password for each challenge
+                localStorage.setItem("crownPassword", currentCrownPassword); // save the current crown password to local storage
+
+                console.log("Correct answer! Crown granted." + currentCrownPassword); // log the correct answer to the console for testing purposes
+            }
+            document.getElementById("output-answer").innerText = data.reply;
+            console.log("Response from server: ", data.reply); // log the response to the console for testing purposes
+        } catch (error) {
+            document.getElementById("output-answer").innerText = "An error occurred while checking your code. Please try again.";
+        }
+    });
+
+}

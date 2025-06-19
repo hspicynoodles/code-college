@@ -6,20 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>code.college</title>
-    <link rel="stylesheet" href="/src/styles.css">
+    <link rel="stylesheet" href="/src/index.css">
 </head>
 
 <body>
-
+    <!-- Login Page-->
     <div class="login-container">
-        <h1 class="login-h1">Forgot Password</h1>
-        <p class="forgotPassText">Please enter your email. If an account with that email exists, you will receive a link
-            shortly.</p>
-        <input type="text" class="email-input" id="email-forgotpass" placeholder="Email">
-        <p id="error-message" style="color: red; display:none;">Invalid Credentials</p>
+        <div class="login-box login">
+            <form action="">
+                <h1 class="login-h1">Forgot Password</h1>
+                <p class="forgotPassText">Please enter your email. If an account with that email exists, you will
+                    receive a link
+                    shortly.</p>
+                <div class="input-box">
+                    <input type="text" class="email-input" id="forgotPassEmailInput" placeholder="Email">
+                </div>
+                <button class="btn" id="forgotpass-submit-button">Submit</button>
+                <button class="btn" id="button-back">Back</button>
 
-        <button class="button-signup" id="forgotpass-submit-button">Submit</button>
-        <button class="button-signup" id="button-back">Back</button>
+            </form>
+        </div>
     </div>
     <script type="module" src="/src/script.js"></script>
     <!-- using module becuase we are using import ES6 Import Statements-->

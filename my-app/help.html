@@ -16,58 +16,42 @@
             <ul class="menu">
                 <li><a href="#home" id="home-button" onclick="homeButtonClick()">Home</a></li>
                 <!--  <li><a href="#forts">Forts</a></li> -->
-                <li><a href="#chat" id="chat-button" onclick="chatButtonClick()">Chat</a></li>
+                <!-- TODO: Add chatbot later for people when they need help-->
+                <!--  <li><a href="#chat" id="chat-button" onclick="chatButtonClick()">Chat</a></li> -->
                 <li><a href="#help">Help</a></li>
                 <li><a href="#login">Account</a></li>
             </ul>
         </div>
 
 
+
         <div>
             <img src="logo.png" alt="code.college logo">
         </div>
-        <h1>Need Help?</h1>
-        <p>Welcome to code.college! My name is Heather and I am currently a CS student at Arizona State University.
-            This webstie was insired by my challening(although fun....sometimes) journey through my CSE 365 class.
-            I wanted to create a website that would actually help students learn the material and apply it to real-world
-            projects.
-            I have always stuggles with learning how to code more on the outside of classes then in them.
-            I hope this website helps you learn the material and apply it to real-world projects and how to go from
-            start to finish!
-        </p>
+        <div class="contact-container">
+            <h2>Contact Me</h2>
+            <form id="contact-form">
+                <div class="input-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" placeholder="Your Name" required />
+                </div>
 
-        <h2>Coding Applications</h2>
-        <p>code.college teaches and applies our skills on small projects, allowing you to dive deeper into your
-            understanding of the material. We have a variety of projects that you can work on and learn from. With these
-            projects, you can learn how to apply your skills in a real-world setting while learning the basics.
-        </p>
-        <p>Enjoy your journey! If you have comments, suggestions, or feedback, please email me at hrmacias@asu.edu</p>
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Your Email" required />
+                </div>
 
-        <h3>Getting Started - Learn the Basics</h3>
-        <p>The material on code.college is split into different "forts." Each fort will cover a topic, and with that
-            information, you will need to hard-code your way to get the crown.
-        </p>
-        <p>Each fort will have a different topic and a set of challenges. The challenges will be based on the topic of
-            the fort and will require you to use the information you've learned to solve them.
-        </p>
-        <p>Note: If you run into problems with concepts and challenges, you can get help on our Discord server!</p>
+                <div class="input-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
+                </div>
 
-        <div class="flex-container">
-            <div class="html-css-icon" id="html-css-icon">
-                <img src="1.png" alt="HTML/CSS">
-            </div>
-            <div class="challenge2">
-                <img src="2.png" alt="JavaScript">
-            </div>
-            <div class="challenge3">
-                <img src="3.png" alt="Databases">
-            </div>
-
+                <button type="submit" class="btn">Send Message</button>
+                <p id="form-status" style="margin-top: 10px;"></p>
+            </form>
         </div>
-        <!-- Implementing a new feature for the future
-        <h4>Your Own Fort - Share with the World!</h4>
-        <p>You too can create your own Fort!</p>
-    -->
+
+
 
     </div>
     <script type="module" src="/src/script.js"></script>
