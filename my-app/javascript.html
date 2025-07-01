@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>code.college</title>
+    <link rel="stylesheet" href="/src/styles.css">
+</head>
+
+<body>
+    <div class="content">
+        <!-- Navigation Bar-->
+        <div class="nav-bar">
+            <ul class="menu">
+                <li><a href="#home" id="home-button" onclick="homeButtonClick()">Home</a></li>
+                <!--   <li><a href="#forts">Forts</a></li> -->
+                <!-- TODO: Add chatbot later for people when they need help-->
+                <!--  <li><a href="#chat" id="chat-button" onclick="chatButtonClick()">Chat</a></li> -->
+                <div class="dropdown">
+                    <li><a href="#help">Account</a></li>
+                    <div class="dropdown-content">
+                        <a href="#">Profile</a>
+                        <a href="#">Settings</a>
+                        <a href="#">Log Out</a>
+                    </div>
+                </div>
+            </ul>
+        </div>
+
+        <!--Logo-->
+        <div>
+            <img src="logo.png" alt="code.college logo">
+        </div>
+
+
+        <h1>JavaScript</h1>
+        <p>Now what is Javascript? Whenever we code our own websites we pretty much have just pages with a bunch of
+            divs,
+            icons and body elements. Javascript allows us to add functionality and interactive. </p>
+
+        <!-- Resources -->
+
+        <h2>Resources</h2>
+        <!-- Add FreeCodeCamp,Geeks for Geeks and W3schools pictures -->
+        <button type="button" class="collapsible" id="collapsible">Placeholder</button>
+        <div class="bar-content">
+            <p class="challenge-text">
+            </p>
+            <button type="button" class="start-button" onclick="startFunction()">Start</button>
+            <input type="text" placeholder="Crown"></input>
+            <button type="button" class="submit-crown" onclick="submitFunction()">Submit</button>
+        </div>
+
+        <div class="level-bar-container">
+
+        </div>
+        <!-- Challenges -->
+        <h2>Challenges</h2>
+
+        <div class="level-bar-container">
+
+            <button type="button" class="collapsible" id="collapsible">Javascript Variables<img src="crown.png"
+                    class="crownImg" style="display:none;" id="challenge1">
+            </button>
+            <!-- Challenge 1-->
+            <div class="bar-content">
+                <p class="challenge-text">Okay so the first thing wer are going to learn are varibles. Variables in
+                    Javascript is like a labeled
+                    box where we can label them and store something inside. There are different types of variables in
+                    Javascript such as
+                    let, const and var. The most common one is let. These are all different scoping variables.
+                </p>
+                <p>
+                    Scoping: to keep varibles in differnt areas of the program. Refer to resources for more information!
+                </p>
+                <div class="coding-example">
+                    <p class="code-text">
+
+                        <!-- // &lt; is a '<' and &gt; is a '>' -->
+                        let myVariable = "Hello World"; <br>
+                        const s = "Hello";<br>
+                        var x = 5; <br>
+                        console.log(myVariable); <br>
+                        console.log(s); <br>
+                        console.log(x); <br>
+                    </p>
+                </div>
+                <p class="challenge-text">
+                    You also see that I used console.log() to print out the variable. This is a function that
+                    allows us to print out the variable to the console. The console is a place where we
+                    can see the output of our code and debug our code. We can also use console.log() to print out
+                    messages to the console. This is useful for debugging our code and seeing what is happening in our
+                    code.
+                    Personally I use console.log() to see if certain parts of my code are working or not.
+                </p>
+                <p class="challenge-text">
+                    But Heather! Which ones do I know when to use? Well, let is the most common one used in
+                    Javascript. It is used to declare variables that can be changed later on in the code.
+                    Const is used to declare variables that cannot be changed later on in the code. It is used to
+                    declare constants that will not change throughout the code. Var is used to declare variables
+                    that can be changed later on in the code but it is not recommended to use it.
+                </p>
+
+                <p class="challenge-text">
+                    For your challenge please create and print three variables using let, const and var.
+                    Then print them out to the console using console.log(). Once you have done that you will get the
+                    crown!
+                    ALSO keep in mind that we are using JavaScript so we need to put our code inside the js input box.
+                </p>
+
+                <!-- when the start button is clicked the crown and submit placeholders should show otherwise they are hidden-->
+                <button type="button" class="start-button" id="start-button">Start</button>
+                <input type="text" class="crown-input" placeholder="Crown" id="crown-input"></input>
+                <button type="button" class="submit-button" id="submit-button">Submit</button>
+            </div>
+
+            <!-- Challenge 2-->
+            <button type="button" class="collapsible" id="collapsible">Data Types<img src="crown.png" class="crownImg"
+                    style="display:none;"></button>
+            <div class="bar-content">
+                <p class="challenge-text"> Good job buddy on creating some variables!
+                    <img src="sarcastic.gif" alt="sarcastic gif" style="width:48px;height:48px;">
+                    There are different types of data types in javascript. The most common are Strings, Null, Boolean,
+                    and Symbols.
+                    There are also non primitive data types such as Objects, Arrays and Functions. Primitive data types
+                    are like little blocks
+                    or like basic toys.
+                </p>
+                <p class="challenge-text">
+                    <li>Strings: A word or sequence such as "Hello World"</li>
+                    <li>Null: when you leave something empty</li>
+                    <li>Boolean: ONLY true or false</li>
+                    <li>Undefined: When you forget to put something in the box</li>
+                    <li>Symbol: a super secret tag like a magic sticker no one else has.</li>
+                </p>
+                <p class="challenge-text">
+                    Non primitive data types are like big boxes and a little more complex. These are like boxes that
+                    hold a bunch of stuff in them.
+                </p>
+                <p class="challenge-text">
+                    <li>Objects: like a backpack with labeled pockets</li>
+                    <li>Array: A shelf with things in order</li>
+                    <li>Function: a robot that does something when you push a button</li>
+                </p>
+
+                <p class="challenge-text">
+                    Go ahead and create some primitive and non primitive data types to get the crown!
+                </p>
+                <button type="button" class="start-button" onclick="startFunction()">Start</button>
+                <input type="text" placeholder="Crown"></input>
+                <button type="button" class="submit-button" onclick="submitFunction()">Submit</button>
+            </div>
+
+            <!-- Challenge 3-->
+            <!-- Functions-->
+            <button type="button" class="collapsible" id="collapsible">Functions<img src="crown.png" class="crownImg"
+                    style="display:none;" id="challenge3"></button>
+            <div class="bar-content">
+                <p class="challenge-text">
+                    As we introduced in the last challenge, functions are like little robots that do something when you
+                    push a button.
+                    Functions in Javascript are used to perform a specific task. They are like little machines that take
+                    in input, do something with it, and then give you output.
+                    Lets show you a function that adds two numbers together.
+                </p>
+                <div class="coding-example">
+                    <p class="code-text">
+
+                        <!-- // &lt; is a '<' and &gt; is a '>' -->
+                        function add(x, y){
+                        <br> return x + y;<br>
+                        } <br>
+                        console.log(add(5, 10));<br>
+                    </p>
+                </div>
+
+                <button type="button" class="start-button" onclick="startFunction()">Start</button>
+                <input type="text" placeholder="Crown"></input>
+                <button type="button" class="submit-crown" onclick="submitFunction()">Submit</button>
+            </div>
+            <!-- Challenge 4 : Control Statements-->
+            <button type="button" class="collapsible" id="collapsible">Control Statements<img src="crown.png"
+                    class="crownImg" style="display:none;"></button>
+            <div class="bar-content">
+                <p class="challenge-text">
+                    Control statements in Javascript handle decision making with conditions and repeat taks using loops.
+                    They
+                    help control the flow of the program based on the logic. They pretty much help us do something but
+                    only if a certain case happens.
+                    or to keep doing something until we say stop.
+                </p>
+                <p>
+                    Two big kind of control statements are conditional statements and loops. Conditional Statements make
+                    decisions and lets our code
+                    choose what to do depending if the condition is true or false.
+                    For example, if we want to check if a number is greater than 10, we can use an if statement.
+                    If statements are used to check if a condition is true or false. If the condition is true, the code
+                    inside the if statement will run.
+                    If the condition is false, the code inside the if statement will not run.
+                    Here is an example of an if statement:
+                </p>
+                <div class="coding-example">
+                    <p class="code-text">
+
+                        <!-- // &lt; is a '<' and &gt; is a '>' -->
+                        <!-- TODO: Add an example of an if statement -->
+                </div>
+                <p>
+                    Loops are used to repeat things over and over. We have a for loop which is used to repeat a block of
+                    code a certain number of times.
+                    We also have a while loop which is used to repeat a block of code while a condition is true.
+                    Here is an example of a for loop:
+                </p>
+                <div class="coding-example">
+                    <p class="code-text">
+
+                        <!-- // &lt; is a '<' and &gt; is a '>' -->
+                        <!-- TODO: Add an example of an if statement -->
+                    </p>
+                </div>
+                <p class="challenge-text">
+                    Now go ahead and create a conditional statement and a loop to get the crown!
+                    You can use the examples above to help you out.
+                    <button type="button" class="start-button" onclick="startFunction()">Start</button>
+                    <input type="text" placeholder="Crown" id="crown-input"></input>
+                    <button type="button" class="submit-crown" onclick="submitFunction()">Submit</button>
+            </div>
+            <!--Challenge 5: Objects -->
+            <div class="bar-content">
+                <p class="challenge-text">
+                    Objects in Javascript are like collections of key-value pairs. Lets say we have an object like our
+                    backpacks.
+                    Inside our backpacks we have an apple, a note book and a pencil.
+                    We can represent this in Javascript as an object. The keys are the items in our backpack and the
+                    values are the
+                    properties of those items.
+                </p>
+                <div class="coding-example">
+                    <p class="code-text">
+
+                        <!-- // &lt; is a '<' and &gt; is a '>' -->
+                        let backpack = {<br>
+                        apple: "red",<br>
+                        notebook: "blue",<br>
+                        pencil: "yellow"<br>
+                        };<br>
+                        console.log(backpack);<br>
+                    </p>
+                </div>
+                <p>
+                    The header is the top used for the website logo like code.college! the navigation bar is the
+                    menu
+                    above that lists the home, forts, chat, help and login button. Next we have the side bar that
+                    could
+                    be used for
+                    ads, links or other information. Content is the main part of the webpage where the main
+                    information
+                    is displayed. The footer is the bottom of the webpage where you can put the copyright
+                    information.
+                    One other thing
+                    we should note are comments when you want to add a comment to your code you can use the
+                    <!-- comment here --> tag
+                    Behind the scenes of this webpage are many MANY comments that help the developers understand the
+                    code and what it does.
+                </p>
+                <p>
+                    With this knowledge lets try to make a webpage layout to get the crown!
+                </p>
+                <button type="button" class="start-button" onclick="startFunction()">Start</button>
+                <input type="text" placeholder="Crown" id="crown-input"></input>
+                <button type="button" class="submit-crown" onclick="submitFunction()">Submit</button>
+            </div>
+            <!-- Challenge 6: Hyperlinks -->
+            <button type="button" class="collapsible" id="collapsible">Ojects<img src="crown.png" class="crownImg"
+                    style="display:none;"></button>
+            <div class="bar-content">
+                <p class="challenge-text">
+                    Now in HTML you can also add hyperlinks to your webpage. Hyperlinks are the links that take you
+                    to
+                    different webpages.
+                    We can add Hyperlinks to our webpage using the &lt;a&gt; tag. The &lt;a&gt; tag is used to
+                    create a
+                    link to another webpage. Here is an example of a
+                    hyperlink tag. The href is the link that'll take you to the webpage you want to go. Please
+                    create a
+                    hyperlink to your favoirte website to create the crown!
+                </p>
+                <button type="button" class="start-button" onclick="startFunction()">Start</button>
+                <input type="text" placeholder="Crown">
+                <button type="button" class="submit-crown" onclick="submitFunction()">Submit</button>
+            </div>
+            <!-- Challenge 7: Lists-->
+            <button type="button" class="collapsible" id="collapsible">Arrays<img src="crown.png" class="crownImg"
+                    style="display:none;"></button>
+            <div class="bar-content">
+                <p class="challenge-text">
+                    Now lets go ahead and create a list in HTML. One good starter after this would be making a to-do
+                    list which we can do together. So there
+                    are two different types of lists in HTML, there is an unordered and ordered lists. An unordered
+                    list
+                    is a list with dots and these lists doesnt matter the order. We will open
+                    up a list with the &lt;ul&gt; tag and close it with the &lt;/ul&gt; tag. In an ordered lists is
+                    things that do go in order like instructions to a receipe so these will
+                    be numbered. We will open up a list with the &lt;ol&gt; tag and close it with the &lt;/ol&gt;
+                    tag.
+                    Here is an example of an unordered list and ordered list. Now go an create an unordered and
+                    ordered list to get the crown!
+
+                </p>
+                <button type="button" class="start-button">Start</button>
+                <input type="text" placeholder="Crown"></input>
+                <button type="button" class="submit-crown" onclick="submitFunction()">Events</button>
+            </div>
+            <button type="button" class="collapsible" id="collapsible">Promises</button>
+            <div class="bar-content">
+                <p class="challenge-text">
+                    Promises in Javascript are used to handle asynchronous operations. They are like a promise that
+                    something will happen in the future.
+                    Promises can be in three states: pending, fulfilled, or rejected. When a promise is pending, it
+                    means that the operation is still happening. When a promise is fulfilled, it means that the
+                    operation has completed successfully. When a promise is rejected, it means that the operation has
+                    failed.
+                </p>
+                <p>
+                    Why do we need promises? Promises are used to handle things suck as API calls, loading images,
+                    getting data from a database or even
+                    downloading a file. When we use promises are whenever we are doing something that takes time to
+                    complete.
+                    If we didnt use promises, our code would stop allowing for the browser to possibly freeze or crash.
+                </p>
+                <button type="button" class="start-button" onclick="startFunction()">Start</button>
+                <input type="text" placeholder="Crown"></input>
+                <button type="button" class="submit-crown" onclick="submitFunction()">Submit</button>
+            </div>
+            <button type="button" class="collapsible" id="collapsible">DOM Manipulation</button>
+            <div class="bar-content">
+                <p class="challenge-text">
+                    DOM: Document Object Model is a way for saying that we can manipulate the HTML and CSS of a webpage
+                    using Javascript.
+                    On code.college and most websites there is alot of DOM maniplation going on. For example, when you
+                    click a button and something happens, that is DOM manipulation.
+                    We can use Javascript to get elements from the HTML and change them or add new elements to the HTML.
+                    Here is an example of how to get an element from the HTML and change its text.
+                </p>
+                <button type="button" class="start-button" onclick="startFunction()">Start</button>
+                <input type="text" placeholder="Crown"></input>
+                <button type="button" class="submit-crown" onclick="submitFunction()">Submit</button>
+            </div>
+            <button type="button" class="collapsible" id="collapsible">Error Handeling</button>
+            <div class="bar-content">
+                <p class="challenge-text">
+                    Error handeling in Javascrript is used to (not to state the obvious) but handle errors that may
+                    occur in our code.
+                    We can use try and catch statements to handle errors in our code so that when Javascript doesnt
+                    understand something or soemthing goes wrong
+                    it can prevent our code from crashing.
+                    Here is an example of how to use try and catch statements in Javascript.
+                </p>
+                <button type="button" class="start-button" onclick="startFunction()">Start</button>
+                <input type="text" placeholder="Crown"></input>
+                <button type="button" class="submit-crown" onclick="submitFunction()">Submit</button>
+            </div>
+
+            <button type="button" class="collapsible" id="collapsible">Synchronous and Dynamic Behavior</button>
+            <div class="bar-content">
+                <p class="challenge-text">
+                    Now before we talked about asynchronous behavior and how it is used to handle things that take time
+                    to complete.
+                    Synchronous behavior is when our code runs in order and waits for each line to complete before
+                    moving on to the next line.
+                    This is the default behavior of Javascript. However, we can use asynchronous behavior to handle
+                    things that take time to complete such as API calls, loading images, or downloading files.
+                    We can use the async and await keywords to handle asynchronous behavior in our code. Dynamic
+                    Behavior in Javascript means things are changing and updating while the page is running.
+                    For example when you click a button and something happens, that is dynamic behavior.
+                    Here is an example of how to use async and await in our code.
+                </p>
+                <button type="button" class="start-button" onclick="startFunction()">Start</button>
+                <input type="text" placeholder="Crown"></input>
+                <button type="button" class="submit-crown" onclick="submitFunction()">Submit</button>
+            </div>
+
+            <button type="button" class="collapsible" id="collapsible">defer and async in JS</button>
+            <div class="bar-content">
+                <p class="challenge-text">
+                    Defer and Async are two attributes that can be used in the script tag to load JavaScript files.
+                    Defer is used to load a JavaScript file after the HTML has been ready. Async is used to load the
+                    scripts as soon as its ready Eventsif the page isnt finished loading.
+
+                </p>
+                <button type="button" class="start-button" onclick="startFunction()">Start</button>
+                <input type="text" placeholder="Crown"></input>
+                <button type="button" class="submit-crown" onclick="submitFunction()">Submit</button>
+            </div>
+            <!-- 
+            <button type="button" class="collapsible" id="collapsible">Margin & Padding</button>
+            <div class="bar-content">
+                <p class="challenge-text">
+                </p>
+                <button type="button" class="start-button" onclick="startFunction()">Start</button>
+                <input type="text" placeholder="Crown"></input>
+                <button type="button" class="submit-crown" onclick="submitFunction()">Submit</button>
+            </div>
+            <button type="button" class="collapsible" id="collapsible">Flexbox</button>
+            <div class="bar-content">
+                <p class="challenge-text">
+                </p>
+                <button type="button" class="start-button" onclick="startFunction()">Start</button>
+                <input type="text" placeholder="Crown"></input>
+                <button type="button" class="submit-crown" onclick="submitFunction()">Submit</button>
+            </div>
+            <button type="button" class="collapsible" id="collapsible">Download VS Code</button>
+            <div class="bar-content">
+                <p class="challenge-text"> Okay now this stuff that I am going to teach you next is going to be WHY I
+                    created this website.
+                    YES. all of these websites teach you how to code but they don't teach you how to make a website.
+                    I am going to teach you how to make a website. Okay now STAY WITH ME. and please watch my videos if
+                    you have any questions hehe.
+                    Without furthur ado lets go ahead and download VS code and get started with the basics of making a
+                    website.
+                </p>
+                <p>
+                    The first thing you need to do is download VS code. VS code is a text editor that you can use to
+                    write your code.
+                    You can download it from the link below.
+                    <a href="https://code.visualstudio.com/download">Download VS Code</a>
+                </p>
+                <p>
+                    then you say OMG which one do I download!?
+                    <img src="fire.gif" alt="fire gif" style="width:100px;height:100px;">
+                    dont worry we are going to download one for which ever operating system you are using. Now give
+                    yourself a round of applause because this is your new best friend.
+                    <img src="patrick.jpg" alt="patrick meme" style="width:100px;height:100px;">
+                    So why do I need this? Well this is going to be the home for your code and where you will be able to
+                    see real life
+                    changes to your code. Now we are going to shift over to the basics of VS code. Now lets create your
+                    first folder by clicking on Open
+                    Most workspaces are created in our Documents folder. So lets go ahead and create a new folder in
+                    your Documents folder.
+                    Once you create that folder go ahead and open it in VS code. Now you are ready to start coding!
+                    Now we are going to create a new file by clicking on the new file button and here use the
+                    boilerplate code that we learned in the first challenge.
+                </p>
+                <p>In order to get the crown for this challenge please upload your index.html file in the space below.
+                    If all looks well you will recieve the crown!</p>
+
+                 Add a file reader 
+                <button type="button" class="start-button" onclick="startFunction()">Start</button>
+                <input type="text" placeholder="Crown"></input>
+                <button type="button" class="submit-crown" onclick="submitFunction()">Submit</button>
+            </div>
+            <button type="button" class="collapsible" id="collapsible">VS Code Files</button>
+            <div class="bar-content">
+                <p class="challenge-text">
+                    Okay so you downloaded VS code and you created a index.html file. Lets go ahead and go into the WHY?
+                    (my favoirte question about everything).
+                    WHY did i create a index.html file? Files are used to store information and need to end with ".html"
+                    to let the computer know that it is a webpage.
+                    HTML is the language for webpages so the browser knows how to display/read the information.
+                    Now the next part ISNT required but its important as developers for us to learn how to publish our
+                    websites.
+                </p>
+                <p>
+                    Now you have your files but keep in mind that you are the only one that can see them. Other people
+                    cant view the website.... YET.
+                    <img src="hehe.jpg" alt="hehe meme" style="width:100px;height:100px;">
+                </p>
+                <button type="button" class="start-button" onclick="startFunction()">Start</button>
+                <input type="text" placeholder="Crown"></input>
+                <button type="button" class="submit-crown" onclick="submitFunction()">Submit</button>
+            </div>
+
+
+
+        </div>  End of level-bar-container-->
+
+        </div>
+
+
+    </div>
+    <script type="module" src="/src/script.js"></script>
+
+</body>
+
+
+</html>
+
+
+<!--  Basic HTML to add more challenges
+            <button type="button" class="collapsible" id="collapsible">Challenge 4</button>
+            <div class="bar-content">
+                <p class="challenge-text"> 
+                </p>
+                <button type="button" class="start-button" onclick="startFunction()">Start</button>
+                <input type="text" placeholder="Crown"></input>
+                <button type="button" class="submit-crown" onclick="submitFunction()">Submit</button>
+            </div>
+        -->

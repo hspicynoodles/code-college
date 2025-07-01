@@ -17,6 +17,8 @@ const accountButton = document.getElementById("account-button");
 const checkButton = document.getElementById("check-code");
 const signUpDirectPage = document.getElementById("signupBtn");
 const submitButton = document.getElementById("submit-button");
+const javascriptIcon = document.getElementById("javascriptIcon");
+const demoButton = document.getElementById("demoBtn");
 
 
 
@@ -26,6 +28,7 @@ import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore'; // importing cloud firestore
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, sendPasswordResetEmail } from 'firebase/auth'; // import the firebase auth and create Email and Password
 import { collection, addDoc } from 'firebase/firestore';
+import e from 'cors';
 // const client = new OpenAI(); // create a new instance of the OpenAi client
 
 
@@ -149,6 +152,15 @@ if (backButton) {
     });
 }
 
+if (demoButton) {
+    demoButton.addEventListener("click", e => {
+        e.preventDefault();
+        window.location.href = "home.html";
+    })
+}
+
+
+
 // toggling code for bars
 // when the user clicks on challenge button the challenge should expand and show the first contents 
 // the for loop will loop through the coll button and assign it to open or close the content 
@@ -170,7 +182,12 @@ if (startButton) {
     startButton.addEventListener("click", startFunction)// call the start function to open the playground.html
     console.log("Start button clicked");
 }
-
+if (javascriptIcon) {
+    javascriptIcon.addEventListener("click", e => {
+        e.preventDefault();
+        window.location.href = "javascript.html";
+    })
+}
 function startFunction() {
     window.open("playground.html", "_blank"); // open the playground.html in a new window   
     //const secretCrownStarter = "code.college/Cr0wn!";
