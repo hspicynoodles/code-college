@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>code.college</title>
+    <link rel="stylesheet" href="/src/styles.css">
+</head>
+
+<body>
+    <div class="content">
+        <!-- Navigation Bar-->
+        <div class="nav-bar">
+            <ul class="menu">
+                <li><a href="#home" id="home-button" onclick="homeButtonClick()">Home</a></li>
+                <!--   <li><a href="#forts">Forts</a></li> -->
+                <!-- TODO: Add chatbot later for people when they need help-->
+                <!--  <li><a href="#chat" id="chat-button" onclick="chatButtonClick()">Chat</a></li> -->
+                <div class="dropdown">
+                    <li><a href="#help">Account</a></li>
+                    <div class="dropdown-content">
+                        <a href="#">Profile</a>
+                        <a href="#">Settings</a>
+                        <a href="#">Log Out</a>
+                    </div>
+                </div>
+            </ul>
+        </div>
+
+        <!--Logo-->
+        <div>
+            <img src="logo.png" alt="code.college logo">
+        </div>
+
+
+        <h1>VS Code & Github</h1>
+        <p>This fort is going to get you familiar with VS Code and Github which is essential for modern web development.
+            Please create
+            a Github account and download VS Code. Information on how to do this is located in resources below!
+        </p>
+
+
+        <!-- Resources -->
+
+        <h2>Resources</h2>
+        <!-- Add FreeCodeCamp,Geeks for Geeks and W3schools pictures -->
+        <button type="button" class="collapsible" id="collapsible">Placeholder</button>
+        <div class="bar-content">
+            <p class="challenge-text">
+            </p>
+            <button type="button" class="start-button" onclick="startFunction()">Start</button>
+            <input type="text" placeholder="Crown"></input>
+            <button type="button" class="submit-crown" onclick="submitFunction()">Submit</button>
+        </div>
+
+        <div class="level-bar-container">
+
+        </div>
+        <!-- Challenges -->
+        <h2>Challenges</h2>
+
+        <div class="level-bar-container">
+
+            <button type="button" class="collapsible" id="collapsible">What is Github?<img src="crown.png"
+                    class="crownImg" style="display:none;" id="challenge1">
+            </button>
+            <!-- Challenge 1-->
+            <div class="bar-content">
+                <p class="challenge-text">
+                    Github is a website and platform where software developers (you) can store, share and colloborate on
+                    code.
+                    Its pretty much like google drive but for code. So you might ask WHY do we need VS code? Well its
+                    helpful in many ways like
+                    storing your code, backing up code, working with others on the same project, tracks bugs and changes
+                    and it allows us to show
+                    our work for future employers. HEHEHEHEHEHE.
+                </p>
+
+                <p class="challenge-text">
+                    Now in Github there is a tool called "Git". This tool allows us to track changes in our code like
+                    when you save your video game after you left off
+                    or when you hit the flag when playing mario bros(I love Mario bros). So yeah its just a checkpoint
+                    for us when we save/commit our code.
+                    Here are some useful commands that we should know when using Git:
+                </p>
+                <ul class="challenge-text">
+                    <li>\git init: Starts a new Git project.</li>
+                    <li>\git add: Adds files.</li>
+                    <li>\git commit: Commits the staged changes to the repository.</li>
+                    <li>\git status: Shows what's changed.</li>
+                    <li>\git push: Pushes the local changes to the remote repository.</li>
+                    <li>\git pull: Fetches and merges changes from the remote repository.</li>
+                </ul>
+                <p class="challenge-text">
+                    Now theres are all commands that can be used in your terminal. The temrminal is a command line
+                    interface that allows you to interact with your computer using text commands.
+                    You can open the terminal in VS Code by going to the top menu and clicking on "Terminal" then "New
+                    Terminal" or by clicking ctrl + ` (the backtick key).
+                    Now with this knowledge lets go ahead and create a new repository on Github and clone it to your
+                    local machine(VS Code) to get the crown!
+                </p>
+                <!-- when the start button is clicked the crown and submit placeholders should show otherwise they are hidden-->
+                <button type="button" class="start-button" id="start-button">Start</button>
+                <input type="text" class="crown-input" placeholder="Crown" id="crown-input"></input>
+                <button type="button" class="submit-button" id="submit-button">Submit</button>
+            </div>
+
+            <!-- Challenge 2-->
+            <button type="button" class="collapsible" id="collapsible">Hello World!<img src="crown.png" class="crownImg"
+                    style="display:none;"></button>
+            <div class="bar-content">
+                <p class="challenge-text"> Okay now that we know what Github is and how to use it lets go ahead and
+                    create a new
+                    repository and clone it to our local machine.
+                    You can always follow my video tutorial for a step-by-step guide!
+                    <img src="sarcastic.gif" alt="sarcastic gif" style="width:48px;height:48px;">
+                </p>
+                <p class="challenge-text">
+                <ul>
+                    <li>Step 1: Got to github and click "new repository"</li>
+                    <li>Step 2: Name your repository "hello-world". You can choose to create a desrcription/public or
+                        private/ and a README file. Then click create repository.</li>
+                    <li>Step 3: Create a branch. A branch in github is pretty much like a seperate version of your code
+                        where you can make changes without messing up the main code so for now we are going to click
+                        main.</li>
+                    <li>Step 4: Clone the repository to your local machine. You can do this by clicking the "Code"
+                        button and copying the URL. Then, in your terminal, navigate to the directory where you want to
+                        clone the repository and run the command "git clone [URL]".</li>
+                    <li>Step 5: Open the cloned repository in VS Code. You can do this by going to the File menu and
+                        selecting "Open Folder..." and then selecting the folder where you cloned the repository.</li>
+
+                </ul>
+                </p>
+                <button type="button" class="start-button" onclick="startFunction()">Start</button>
+                <input type="text" placeholder="Crown"></input>
+                <button type="button" class="submit-button" onclick="submitFunction()">Submit</button>
+            </div>
+
+            <!-- Challenge 3-->
+            <button type="button" class="collapsible" id="collapsible">Uploading to Github<img src="crown.png"
+                    class="crownImg" style="display:none;" id="challenge3"></button>
+            <div class="bar-content">
+                <p class="challenge-text"> The reason why I am adding in a DIV & Flexbox section is becuase I feel
+                    this
+                    is very missed
+                    when taking a lot of 'learn to code' courses. This is a very important part of HTML and CSS
+                    becuase
+                    untimately
+                    this is how we are going to structure our webpages and we need to understand how they work.
+                    <img src="keepGoing.jpg" alt="keep going meme" style="width:100px;height:100px;">
+                    Okay we are going to think of Div as a box. So I created multiple boxes for this webpage. I can
+                    put
+                    anything
+                    inside my box. I can put text, images, videos, etc. I can also put other boxes inside my box.
+                    This
+                    is called nesting.
+                    Now a flexbox is a magic box. If I put a flexbox inside a div it can arrage the toys inside the
+                    box
+                    in a way that I want.
+                    I can make the toys inside the box go in a row or a column. I can also make the toys inside the
+                    box
+                    grow or shrink.
+                    So in the end a div is a plain empty box and a flexbox controls hows the stuff inside is
+                    arranged
+                    using our IMAGINATION (IF YOU KNOW THIS EXACT REFERENCE AND WHY
+                    I USED IT YOUR A REAL ONE).
+                    <img src="imagination.gif" alt="imagination meme" style="width:100px;height:100px;">
+
+                </p>
+                <p>
+                    here is an example and output of what we should expect for our divs and spans
+                </p>
+                <p>
+                    now that you know a little bit about divs and spans lets try to make some divs and spans to get
+                    the
+                    crown!
+                </p>
+                <button type="button" class="start-button" onclick="startFunction()">Start</button>
+                <input type="text" placeholder="Crown"></input>
+                <button type="button" class="submit-crown" onclick="submitFunction()">Submit</button>
+            </div>
+            <!-- Challenge 4 : HTML Layout ** Might get rid of this one seems a bit repetitive-->
+            <!-- Talk about the basics of styling-->
+            <button type="button" class="collapsible" id="collapsible">Downloading files from Github<img src="crown.png"
+                    class="crownImg" style="display:none;"></button>
+            <div class="bar-content">
+                <p class="challenge-text"> Now I know ... the coding process takes FOREVER! but we are almost done
+                    with
+                    the basics!
+                    lets go ahead and go over the HTML layout. The layout of a webpage is how the elements are
+                    arranged
+                    on the page. Think of it like the box(I know so many boxes) but this is the master of all master
+                    boxes that is the &lt;html&gt; tags.
+                    Inside out html tags which is our master box we can place our divs, paragraphs, headers, images,
+                    and
+                    everything you can think of to make out webpage.
+                </p>
+                <p>
+                    The header is the top used for the website logo like code.college! the navigation bar is the
+                    menu
+                    above that lists the home, forts, chat, help and login button. Next we have the side bar that
+                    could
+                    be used for
+                    ads, links or other information. Content is the main part of the webpage where the main
+                    information
+                    is displayed. The footer is the bottom of the webpage where you can put the copyright
+                    information.
+                    One other thing
+                    we should note are comments when you want to add a comment to your code you can use the
+                    <!-- comment here --> tag
+                    Behind the scenes of this webpage are many MANY comments that help the developers understand the
+                    code and what it does.
+                </p>
+                <p>
+                    With this knowledge lets try to make a webpage layout to get the crown!
+                </p>
+                <button type="button" class="start-button" onclick="startFunction()">Start</button>
+                <input type="text" placeholder="Crown" id="crown-input"></input>
+                <button type="button" class="submit-crown" onclick="submitFunction()">Submit</button>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="/src/script.js"></script>
+
+</body>
+
+
+</html>

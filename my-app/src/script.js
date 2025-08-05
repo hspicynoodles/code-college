@@ -1,6 +1,5 @@
 const challenge1 = document.getElementById("challenge1");
 var coll = document.getElementsByClassName("collapsible");
-var startButton = document.getElementById("start-button");
 const crownInput = document.getElementById("crown-input");
 const htmlCssIcon = document.getElementById("html-css-icon");
 const homeButton = document.getElementById("home-button")
@@ -19,6 +18,8 @@ const signUpDirectPage = document.getElementById("signupBtn");
 const submitButton = document.getElementById("submit-button");
 const javascriptIcon = document.getElementById("javascriptIcon");
 const demoButton = document.getElementById("demoBtn");
+const vsCodeGithubIcon = document.getElementById("vsCodeIcon");
+const startButton = document.querySelectorAll('.start-button');
 
 
 
@@ -152,14 +153,19 @@ if (backButton) {
     });
 }
 
+if (vsCodeGithubIcon) {
+    vsCodeGithubIcon.addEventListener("click", e => {
+        e.preventDefault();
+        window.location.href = "challenge3.html";
+    })
+}
+
 if (demoButton) {
     demoButton.addEventListener("click", e => {
         e.preventDefault();
         window.location.href = "home.html";
     })
 }
-
-
 
 // toggling code for bars
 // when the user clicks on challenge button the challenge should expand and show the first contents 
@@ -176,29 +182,36 @@ for (i = 0; i < coll.length; i++) { // loop through all the collapsible buttons
     });
 }
 
-// open up a new window when the user clicks on the start button
+// start buttons for all challenges which will call start function
+startButton.forEach(button => {
+    button.addEventListener("click", () => {
+        const challengeId = button.dataset.challengeId;
+        startFunction(challengeId);
+    });
+});
 
-if (startButton) {
-    startButton.addEventListener("click", startFunction)// call the start function to open the playground.html
-    console.log("Start button clicked");
+// open up the playground in another window
+function startFunction(challengeId) {
+    const url = `playground.html?challengeId=${challengeId}`;
+    window.open(url, "_blank"); // open the playground.html in a new window   
+    console.log("Opening challenge:", challengeId); // log the password to the console for testing purposes
 }
+
+// user clicks on Javascript Icon on home page 
 if (javascriptIcon) {
     javascriptIcon.addEventListener("click", e => {
         e.preventDefault();
         window.location.href = "javascript.html";
     })
 }
-function startFunction() {
-    window.open("playground.html", "_blank"); // open the playground.html in a new window   
-    //const secretCrownStarter = "code.college/Cr0wn!";
-    // currentCrownPassword = secretCrownStarter + generatePassword(); // generate a new password for each challenge
-    //console.log(currentCrownPassword); // log the password to the console for testing purposes
 
-}
+
+
 
 // when the user clicks on submit function is should match the input value with the correct answer
 // I dont want to have 20 submitFunctions so I will use a switch statement to check the input value
 function submitFunction() {
+
     //what I want to do instead of using a password for each challenge I am going to create a random password so each time 
     // the user clicks on a challenge a new password should be generated and after each challenge we should delete the password
     // and generate a new one for the next challenge
@@ -263,8 +276,6 @@ function run() {
 
     output.contentDocument.body.innerHTML = htmlCode.value + "<style>" + cssCode.value + "</style>";
     output.contentWindow.eval(jsCode.value);
-
-
 }
 
 
@@ -312,8 +323,16 @@ if (checkButton) {
     //  startFunction();
 
     document.getElementById("check-code").addEventListener("click", async () => {
-        const input = document.getElementById("html-editor").value; // get the input text from the html editor
+        // grab the html, js, and css text
+        const html = document.getElementById("html-editor").value;
+        const css = document.getElementById("css-editor")?.value || ""; // optional
+        const js = document.getElementById("javascript-editor")?.value || ""; // optional
 
+        //combine all to one message
+        const input = `HTML:${html} 
+        CSS:${css}
+        Javascript:
+        ${js}`;
 
         // fetch sends a request over the network and waits for a response
         // we use await becuase fetch is an asynchronous function

@@ -21,6 +21,28 @@ const openai = new OpenAI({
 //handle JSON requests
 app.use(express.json());
 
+
+// create a list of challenges 
+const challenges = {
+    html_boilerplate: {
+        description: `
+Write a valid HTML5 boilerplate. It must include:
+- <!DOCTYPE html>
+- <html>, <head>, and <body> tags
+- <meta charset="UTF-8">
+- <title> tag
+- A comment inside the body`,
+        password: "htmlWizard123"
+    },
+    reverse_string: {
+        description: `
+Write a JavaScript function that takes a string and returns it reversed. For example, input "hello" returns "olleh".`,
+        password: "stringFlipper9000"
+    }
+    // add more challenges here
+};
+
+
 // test route to check if the server is running 
 // route that will recieve messages 
 app.get('/', (req, res) => {
@@ -29,33 +51,34 @@ app.get('/', (req, res) => {
 
 // POST is the request that sends data to the server 
 app.post('/message', async (req, res) => {
-    const userMessage = req.body.message;
+    const { userMessage, challengeId } = req.body;
+    const challenge = challenges[challengeId];
 
     console.log('User sent: ', userMessage);
 
-    // Here you would typically process the message, e.g., send it to an AI model
+    if (!challenge) {
+        return res.status(400).json({ error: "Invalid Challenge ID." });
+    }
+
+    const prompt = `
+Challenge:
+${challenge.description}
+
+User's Answer:
+${userMessage}
+`;
+
     try {
         const chatResponse = await openai.chat.completions.create({
             model: "gpt-3.5-turbo",
             messages: [
                 {
                     role: "system",
-                    content: "You are a coding challenge checker. Only respond with 'Correct ✅' or 'Incorrect ❌' and a short reason if the answer does not meet the requirements."
+                    content: "You are a strict coding challenge evaluator."
                 },
                 {
                     role: "user",
-                    content: `
-Challenge:
-Write a valid HTML5 boilerplate. It must include:
-- <!DOCTYPE html>
-- <html>, <head>, and <body> tags
-- <meta charset="UTF-8">
-- <title> tag
-- A comment inside the body
-
-User's Answer:
-${userMessage}
-`
+                    content: prompt
                 }
             ]
         });
